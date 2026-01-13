@@ -5,6 +5,8 @@ import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 import { BentoGridThird } from "@/components/aceternity-ui/BentoGrid";
 import { TestimonialMarquee } from "@/components/magic-ui/Testimonials";
 import EditorialGrid from "@/components/ui/EditorialGrid";
+import { CTA } from "@/components/magic-ui/CTA";
+// import { CTA } from "@/components/magic-ui/CTA";
 
 export default function Home() {
   return (
@@ -22,7 +24,7 @@ export default function Home() {
         </div>
         {/* Bento Grid End */}
 
-              {/* Testimonial Start */}
+        {/* Testimonial Start */}
         <div className="pt-20 max-w-7xl mx-auto">
           <PrimaryHeading
             heading="Empower Your Workflow with AI"
@@ -41,6 +43,12 @@ export default function Home() {
           <EditorialGrid />
         </div>
         {/* Editorial Grid End */}
+
+        {/* CTA Start */}
+        <div className="pt-20 max-w-7xl mx-auto">
+          <CTA />
+        </div>
+        {/* CTA End */}
       </div>
     </>
   );

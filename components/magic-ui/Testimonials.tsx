@@ -4,21 +4,21 @@ import { Marquee } from "../ui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    name: "Client Name",
+    username: "@client",
+    body: "I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    name: "Client Name",
+    username: "@client",
+    body: "I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jill",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "Client Name",
+    username: "@client",
+    body: "I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing. I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/john",
   },
 ];
@@ -49,7 +49,7 @@ const ReviewCard = ({
     >
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
-          <blockquote className="mb-5 text-sm">{body}</blockquote>
+          <blockquote className="mb-5 text-sm font-heading">{body}</blockquote>
           <div className="flex items-center gap-x-2">
             <img
               className="rounded-full"
@@ -58,10 +58,12 @@ const ReviewCard = ({
               alt=""
               src={img}
             />
-            <figcaption className="text-sm font-medium dark:text-white">
+            <figcaption className="text-sm font-medium dark:text-white font-heading">
               {name}
             </figcaption>
-            <p className="text-xs font-medium dark:text-white/40">{username}</p>
+            <p className="text-xs font-medium dark:text-white/40 font-heading">
+              {username}
+            </p>
           </div>
         </div>
       </div>
@@ -87,8 +89,8 @@ export function TestimonialMarquee() {
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="from-background pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-black-to-b"></div>
-      <div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-black-to-t"></div>
+      <div className="from-background pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b"></div>
+      <div className="from-background pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t"></div>
     </div>
   );
 }
