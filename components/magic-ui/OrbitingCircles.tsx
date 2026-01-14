@@ -1,9 +1,14 @@
+import { cn } from "@/lib/utils";
 import { OrbitingCircles } from "../ui/orbiting-circles";
 
-export function OrbitingCirclesDemo() {
+export function OrbitingCirclesDemo({ className }: { className?: string }) {
   return (
-    <div className="relative flex h-[650px] w-full items-center justify-center overflow-hidden scale-130">
-
+    <div
+      className={cn(
+        "pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden scale-100",
+        className
+      )}
+    >
       {/* 🔵 CENTER ICON */}
       <div
         className="
@@ -39,7 +44,6 @@ export function OrbitingCirclesDemo() {
         <Icons.whatsapp />
         <Icons.notion />
       </OrbitingCircles>
-
     </div>
   );
 }

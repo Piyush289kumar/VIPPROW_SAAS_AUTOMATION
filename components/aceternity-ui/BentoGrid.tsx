@@ -8,6 +8,7 @@ import { AnimatedListDemo } from "../magic-ui/AnimatedList";
 import { OrbitingCirclesDemo } from "../magic-ui/OrbitingCircles";
 import { AreaChartSection } from "../shadcn/AreaChart";
 import { ChartBarLabelSection } from "../shadcn/ChartBarLabel";
+import { ChatDemoLoop } from "../ui/ChatLoop";
 
 const files = [
   {
@@ -41,7 +42,8 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <AnimatedListDemo className="absolute top-4 right-2 h-[450px] w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90" />
+      <ChatDemoLoop className="absolute top-0 right-2 h-[400px] w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
+      // <AnimatedListDemo className="absolute top-4 right-2 h-[450px] w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90" />
     ),
   },
   {
@@ -52,8 +54,8 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <OrbitingCirclesDemo />
-      // <AnimatedListDemo className="absolute top-4 right-2 h-[300px] w-full scale-75 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-90" />
+      // <OrbitingCirclesDemo />
+       <OrbitingCirclesDemo className="absolute inset-0 h-full w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
     ),
   },
   {

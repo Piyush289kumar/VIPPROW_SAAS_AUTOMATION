@@ -46,7 +46,7 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-none [border:1px_solid_rgba(255,255,255,.1)]",
+      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl [border:1px_solid_rgba(255,255,255,.1)]",
       className
     )}
     {...props}
