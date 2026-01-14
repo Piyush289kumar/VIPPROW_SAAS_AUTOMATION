@@ -7,6 +7,7 @@ import { TestimonialMarquee } from "@/components/magic-ui/Testimonials";
 import EditorialGrid from "@/components/ui/EditorialGrid";
 import { CTA } from "@/components/magic-ui/CTA";
 import MultiSectionScroller from "@/components/ui/MultiSectionScroller";
+import ServiceCardGrid from "@/components/ui/ServiceCardGrid";
 
 export default function Home() {
   return (
@@ -14,6 +15,17 @@ export default function Home() {
       <div className="bg-black">
         <HeroSection />
         <PartnerBrandMarquee />
+
+        {/* Services Start */}
+        <div className="pt-20 max-w-7xl mx-auto">
+          <PrimaryHeading
+            heading="Empower Your Workflow with AI"
+            des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          />
+          <ServiceCardGrid />
+        </div>
+        {/* Services End */}
+
         {/* Bento Grid Start */}
         <div className="pt-20">
           <PrimaryHeading
@@ -49,12 +61,6 @@ export default function Home() {
           <CTA />
         </div>
         {/* CTA End */}
-
-        {/* Services Start */}
-        {/* <div className="pt-20 max-w-7xl mx-auto">
-          <MultiSectionScroller />
-        </div> */}
-        {/* Services End */}
       </div>
     </>
   );
