@@ -21,7 +21,7 @@ export function NavbarMenu() {
     },
     {
       name: "Company",
-      link: "#pricing",
+      link: "/company",
     },
     {
       name: "Services",
