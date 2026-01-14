@@ -66,7 +66,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
     background: (
-      <AreaChartSection className="absolute top-4 right-0 h-[450px] w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
+      <AreaChartSection className="absolute top-4 right-0 h-[450px] w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
     ),
   },
   {
