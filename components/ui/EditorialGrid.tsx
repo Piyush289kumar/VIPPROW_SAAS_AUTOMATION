@@ -1,29 +1,50 @@
-import EditorialCard from "@/components/ui/cards/EditorialCard";
+"use client";
 
-export default function EditorialGrid() {
+import { useState } from "react";
+import EditorialCard from "@/components/ui/cards/EditorialCard";
+import { editorials } from "@/data/editorials";
+import { Pagination } from "@/components/ui/Pagination";
+
+interface EditorialGridProps {
+  itemsPerPage?: number;
+  isPaggination?:boolean
+}
+
+export default function EditorialGrid({
+  itemsPerPage = 6,
+  isPaggination = false
+}: EditorialGridProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(editorials.length / itemsPerPage);
+
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  const currentItems = editorials.slice(start, end);
+
   return (
     <section className="bg-black px-6 py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        
-        <EditorialCard
-          image="/assets/images/articals/1x1.webp"
-          title="Inside Mirakl’s agentic commerce vision"
-          meta="API"
-        />
-
-        <EditorialCard
-          image="/assets/images/articals/1x1.webp"
-          title="Inside JetBrains—the company reshaping how the world writes code"
-          meta="ChatGPT"
-        />
-
-        <EditorialCard
-          image="/assets/images/articals/1x1.webp"
-          title="How Scania is accelerating work with AI across its global workforce"
-          meta="ChatGPT"
-        />
-
+        {currentItems.map((item, index) => (
+          <EditorialCard
+            key={index}
+            image={item.image}
+            title={item.title}
+            meta={item.meta}
+          />
+        ))}
       </div>
+
+        {}
+      {/* Pagination */}
+      {/* {totalPages > 1 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      )} */}
     </section>
   );
 }

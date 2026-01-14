@@ -40,7 +40,7 @@ export default function Home() {
             heading="Empower Your Workflow with AI"
             des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
           />
-          <EditorialGrid />
+          <EditorialGrid itemsPerPage={3} />
         </div>
         {/* Editorial Grid End */}
 
@@ -51,9 +51,9 @@ export default function Home() {
         {/* CTA End */}
 
         {/* Services Start */}
-        <div className="pt-20 max-w-7xl mx-auto">
+        {/* <div className="pt-20 max-w-7xl mx-auto">
           <MultiSectionScroller />
-        </div>
+        </div> */}
         {/* Services End */}
       </div>
     </>

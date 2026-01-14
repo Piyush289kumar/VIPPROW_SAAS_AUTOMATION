@@ -16,8 +16,8 @@ import { useState } from "react";
 export function NavbarMenu() {
   const navItems = [
     {
-      name: "AI",
-      link: "#features",
+      name: "Home",
+      link: "/",
     },
     {
       name: "Company",
@@ -29,7 +29,7 @@ export function NavbarMenu() {
     },
     {
       name: "Articles",
-      link: "#pricing",
+      link: "/articles",
     },
     {
       name: "Contact",
