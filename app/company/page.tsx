@@ -1,5 +1,6 @@
 import { BackgroundRippleEffect } from "@/components/aceternity-ui/BackgroundRippleEffec";
 import { AnimatedSVGCard } from "@/components/aceternity-ui/card/AnimatedSVGCard";
+import CompanyStory from "@/components/aceternity-ui/sections/CompanyStory";
 import { CTA } from "@/components/magic-ui/CTA";
 import { PartnerBrandMarquee } from "@/components/magic-ui/PartnerBrandMarquee";
 import MissionSection from "@/components/ui/cards/MissionSection";
@@ -12,6 +13,13 @@ export default function CompanyPage() {
     <>
       <BackgroundRippleEffect />
       <PartnerBrandMarquee />
+
+      {/* Company Story Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <CompanyStory />
+      </div>
+      {/* Company Story End */}
+
       {/* Services Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
