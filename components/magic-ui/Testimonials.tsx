@@ -4,27 +4,29 @@ import { Marquee } from "../ui/marquee";
 
 const reviews = [
   {
-    name: "Client Name",
+    name: "Belleza Beauty & Makeup Academy",
     username: "Client Dep. 1",
-    body: "I don't know what to say. I'm speechless. <span>This is amazing. I don't know what to say. I'm speechless.</span> This is amazing. I don't know what to say. I'm speechless. This is amazing.",
+    body: "Vipprow’s ad strategy gave us a strong boost in leads and conversions.<span>What we liked most is their transparency and performance tracking approach.</span> We could clearly see how the digital marketing investment was converting into real inquiries.",
+
+ 
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Client Name",
+    name: "The Mango Tree Staycation",
     username: "Client Dep. 2",
-    body: "I don't know what to say. I'm speechless. <span>This is amazing. I don't know what to say. I'm speechless.</span> This is amazing. I don't know what to say. I'm speechless. This is amazing.",
+    body: "We wanted digital marketing that looks premium and feels authentic — and Vipprow delivered exactly that. <span>The content they created was aligned with our brand vibe, and the overall strategy helped us build strong credibility online.</span> Vipprow doesn’t just post content — they build brand value.",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Client Name",
+    name: "Odyssefy | Travel Agency",
     username: "Client Dep. 3",
-    body: "I don't know what to say. I'm speechless. <span>This is amazing. I don't know what to say. I'm speechless.</span> This is amazing. I don't know what to say. I'm speechless. This is amazing.",
+    body: "We had a smooth onboarding experience with Vipprow.<span> Their team guided us step-by-step on what access and assets were required and started execution quickly.</span> We noticed improvement in our brand presentation and engagement after their content optimization",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Client Name",
-    username: "Client Dep. 4",
-    body: "I don't know what to say. I'm speechless. <span>This is amazing. I don't know what to say. I'm speechless.</span> This is amazing. I don't know what to say. I'm speechless. This is amazing.",
+    name: "Rudrakshawal",
+    username: "Rudrakshawala",
+    body: "Vipprow handled <span>our Meta & Google Ads campaigns in a very professional manner.</span> From proper targeting to creative design and campaign optimization, everything was done with a performance mindset.",
     img: "https://avatar.vercel.sh/jack",
   },
 ];
