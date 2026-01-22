@@ -30,7 +30,7 @@ export default function PrimaryGlowButton({
       {/* Inner glow */}
       <span
         className="
-          pointer-events-none absolute inset-0 -z-10 rounded-xl
+          hidden pointer-events-none absolute inset-0 -z-10 rounded-xl
           bg-blue-500 opacity-70 blur-lg
         "
       />

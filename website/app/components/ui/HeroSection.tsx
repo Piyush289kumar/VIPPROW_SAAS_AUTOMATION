@@ -6,7 +6,7 @@ import SecondaryButton from "@/components/ui/buttons/SecondaryButton";
 export default function HeroSection() {
   return (
     <>
-      <main className="relative min-h-screen overflow-hidden bg-zinc-50 font-sans dark:bg-black">
+      <main className="relative min-h-[93vh]  md:min-h-screen overflow-hidden bg-zinc-50 font-sans dark:bg-black">
         {/* 🌌 Stars Background */}
         <StarsBackgroundVipprow />
 
@@ -40,7 +40,7 @@ export default function HeroSection() {
           <p
             className="
           mt-6 max-w-xl
-          text-base leading-relaxed
+          text-sm leading-relaxed
           text-zinc-600 dark:text-zinc-400
           sm:text-md leading-tight
         "
@@ -50,22 +50,22 @@ export default function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-row gap-4">
             <PrimaryGlowButton heading="Get Started Now" />
             <SecondaryButton heading="Book a Demo" />
           </div>
         </section>
 
         {/* 🧩 Bottom Brand SVG */}
-        <div className="pointer-events-none absolute bottom-24 left-0 right-0 z-0">
+        <div className="pointer-events-none absolute bottom-24 left-0 right-0 z-0 px-0 md:px-10">
           <img
             src="/assets/images/logo/brand_outline.svg"
             alt="VIPPROW Brand"
             className="
-            mx-auto w-[120%] max-w-none
+            mx-auto w-[100%] max-w-none
             translate-y-1/3
             opacity-15 dark:opacity-50
-            sm:w-[110%] md:w-[100%]
+            sm:w-[100%] md:w-[100%]
           "
           />
         </div>
