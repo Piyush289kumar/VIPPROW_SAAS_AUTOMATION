@@ -41,7 +41,7 @@ import { useUserProfile } from "~/features/user/userApi";
 import { useSelector } from "react-redux";
 import type { RootState } from "~/redux/store";
 import { useLocation } from "react-router";
-import belleza_logo from "@/welcome/belleza_logo.svg";
+import vipprow_logo from "@/welcome/vipprow.png";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isLoading } = useUserProfile();
@@ -187,14 +187,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-              <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-10 items-center justify-center rounded-lg">
-                  {/* <Command className="size-4" /> */}
-                  <img
-                    src={belleza_logo}
-                    alt="Image"
-                    className="absolute inset-0 h-full w-full object-contain"
-                  />
-                </div>
+            <div className=" text-sidebar-primary-foreground flex aspect-square size-10 items-center justify-center rounded-lg">
+              <img
+                src={vipprow_logo}
+                alt="Image"
+                className="absolute inset-0 h-full w-full object-contain"
+              />
+            </div>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>

@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // for redirect
 import { saveToken } from "~/utils/auth";
 import { useAuth } from "~/hooks/useAuth";
-import belleza_logo from "@/welcome/vipprow.png";
+import vipprow_logo from "@/welcome/vipprow.png";
 
 export function SignInForm({
   className,
@@ -132,7 +132,7 @@ export function SignInForm({
           </form>
           <div className="relative hidden md:block bg-[#1E4EC8] dark:bg-[#1E4EC8]">
             <img
-              src={belleza_logo}
+              src={vipprow_logo}
               alt="Image"
               className="absolute inset-0 h-full w-full object-contain p-5"
             />
