@@ -14,14 +14,14 @@ export default function GlassBottomCard({
   tag,
 }: GlassBottomCardProps) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl min-w-[260px]">
+    <div className="relative overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl min-w-[270px]">
       {/* IMAGE */}
       <Image
         src="/assets/images/articals/1x1.webp"
         alt={title}
         width={250}
         height={250}
-        className="w-full h-[300px] object-cover"
+        className="w-full h-[320px] object-cover"
         priority
       />
 

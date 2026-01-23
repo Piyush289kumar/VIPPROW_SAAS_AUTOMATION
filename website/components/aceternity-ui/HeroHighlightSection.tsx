@@ -18,12 +18,12 @@ export function HeroHighlightSection() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-2xl px-4 md:text-4xl lg:text-4xl font-bold text-neutral-700 dark:text-white max-w-3xl leading-relaxed lg:leading-snug text-center mx-auto font-heading"
+        className="text-3xl px-2 md:text-4xl lg:text-4xl font-bold text-neutral-700 dark:text-white max-w-3xl leading-normal lg:leading-snug text-center mx-auto font-heading"
       >
-        With insomnia, nothing&apos;s real. Everything is far away. Everything
+        Everything is far away. Everything
         is a<br/>
         <Highlight className="text-black dark:text-white font-heading">
-          Vipprow Description.
+          Vipprow.
         </Highlight>
       </motion.h1>
     </HeroHighlight>

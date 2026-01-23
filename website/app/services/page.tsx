@@ -1,9 +1,7 @@
 import { ClientCardCarousel } from "@/components/aceternity-ui/ClientCardCarousel";
 import { HeroHighlightSection } from "@/components/aceternity-ui/HeroHighlightSection";
 import { CTA } from "@/components/magic-ui/CTA";
-import GlassBottomCard from "@/components/ui/cards/GlassBottomCard";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
-import EditorialGrid from "@/components/ui/EditorialGrid";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
 export default function ServicesPage() {

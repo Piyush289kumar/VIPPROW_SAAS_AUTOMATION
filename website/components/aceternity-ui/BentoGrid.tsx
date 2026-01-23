@@ -55,7 +55,7 @@ const features = [
     className: "col-span-3 lg:col-span-1",
     background: (
       // <OrbitingCirclesDemo />
-       <OrbitingCirclesDemo className="absolute inset-0 h-full w-full scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
+       <OrbitingCirclesDemo className="absolute inset-0 h-full w-full scale-85 md:scale-100 border-none [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] transition-all duration-300 ease-out group-hover:scale-100" />
     ),
   },
   {

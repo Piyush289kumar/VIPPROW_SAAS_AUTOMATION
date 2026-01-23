@@ -25,7 +25,7 @@ export default function EditorialGrid({
 
   return (
     <section className="bg-black px-6 py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {currentItems.map((item, index) => (
           <EditorialCard
             key={index}

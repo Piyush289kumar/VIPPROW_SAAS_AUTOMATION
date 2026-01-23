@@ -10,12 +10,12 @@ import "swiper/css";
 
 /* ------------------ DATA ------------------ */
 
-const TABS = ["Digital", "Software", "Product", "Other"] as const;
+const TABS = ["Marketing", "Software", "Automation"] as const;
 
 type TabKey = (typeof TABS)[number];
 
 const SERVICES: Record<TabKey, any[]> = {
-  Digital: [
+  Marketing: [
     {
       image: "/assets/images/services/marketing.jpg",
       title: "Digital Marketing",
@@ -153,7 +153,7 @@ const SERVICES: Record<TabKey, any[]> = {
     },
   ],
 
-  Product: [
+  Automation: [
     {
       image: "/assets/images/services/design.jpg",
       title: "UI / UX Design",
@@ -216,74 +216,12 @@ const SERVICES: Record<TabKey, any[]> = {
     },
   ],
 
-  Other: [
-    {
-      image: "/assets/images/services/consulting.jpg",
-      title: "Consulting",
-      subtitle: "Expert guidance",
-      tag: "Advisor",
-    },
-    {
-      image: "/assets/images/services/support.jpg",
-      title: "Support & Maintenance",
-      subtitle: "Ongoing assistance",
-      tag: "Care",
-    },
-    {
-      image: "/assets/images/services/consulting.jpg",
-      title: "Consulting",
-      subtitle: "Expert guidance",
-      tag: "Advisor",
-    },
-    {
-      image: "/assets/images/services/support.jpg",
-      title: "Support & Maintenance",
-      subtitle: "Ongoing assistance",
-      tag: "Care",
-    },
-    {
-      image: "/assets/images/services/consulting.jpg",
-      title: "Consulting",
-      subtitle: "Expert guidance",
-      tag: "Advisor",
-    },
-    {
-      image: "/assets/images/services/support.jpg",
-      title: "Support & Maintenance",
-      subtitle: "Ongoing assistance",
-      tag: "Care",
-    },
-    {
-      image: "/assets/images/services/consulting.jpg",
-      title: "Consulting",
-      subtitle: "Expert guidance",
-      tag: "Advisor",
-    },
-    {
-      image: "/assets/images/services/support.jpg",
-      title: "Support & Maintenance",
-      subtitle: "Ongoing assistance",
-      tag: "Care",
-    },
-    {
-      image: "/assets/images/services/consulting.jpg",
-      title: "Consulting",
-      subtitle: "Expert guidance",
-      tag: "Advisor",
-    },
-    {
-      image: "/assets/images/services/support.jpg",
-      title: "Support & Maintenance",
-      subtitle: "Ongoing assistance",
-      tag: "Care",
-    },
-  ],
 };
 
 /* ------------------ COMPONENT ------------------ */
 
 export default function ServiceGridScroller() {
-  const [activeTab, setActiveTab] = useState<TabKey>("Digital");
+  const [activeTab, setActiveTab] = useState<TabKey>("Marketing");
 
   return (
     <section className="relative py-20 bg-black overflow-hidden max-w-7xl mx-auto">
