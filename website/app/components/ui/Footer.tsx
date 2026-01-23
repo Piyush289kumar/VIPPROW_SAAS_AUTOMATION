@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-wrap justify-start md:justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-5 px-5  w-full mx-auto  text-lg md:text-md text-gray-500">
-      <div className="flex flex-wrap justify-start flex-col md:flex-row items-start gap-10 md:gap-[60px] xl:gap-[140px] w-full">
+    <footer className="flex flex-wrap justify-start md:justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-5 px-5 md:pt-20 w-full mx-auto  text-lg md:text-md text-gray-500 ">
+      <div className="flex flex-wrap justify-start md:justify-center flex-col md:flex-row items-start gap-10 md:gap-[60px] xl:gap-[140px] w-full">
         <Link href="https://prebuiltui.com">
           <svg
             width="31"
@@ -108,8 +108,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-end w-full">
-          <p className="max-w-60">
+        <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-center w-full">
+          <p className="max-w-60 md:max-w-full">
             Making every customer feel valued—no matter the size of your
             audience.
           </p>
