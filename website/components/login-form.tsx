@@ -21,7 +21,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col gap-6 min-w-sm md:min-w-lg", className)} {...props}>
+    <div className={cn("flex flex-col gap-6 min-w-auto md:min-w-lg", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Get in touch</CardTitle>
