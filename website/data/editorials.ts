@@ -7,13 +7,13 @@ export interface EditorialItem {
 export const editorials: EditorialItem[] = [
   {
     image: "/assets/images/articals/1x1.webp",
-    title: "Inside Mirakl’s agentic commerce vision",
+    title: "Inside Mirakl’s agentic commerce vision Inside JetBrains—the company reshaping how the world writes code",
     meta: "API",
   },
   {
     image: "/assets/images/articals/1x1.webp",
     title:
-      "Inside JetBrains—the company reshaping how the world writes code",
+      "Inside JetBrains—the company reshaping how the world writes code Inside JetBrains—the company reshaping how the world writes code",
     meta: "ChatGPT",
   },
   {

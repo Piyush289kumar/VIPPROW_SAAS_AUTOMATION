@@ -47,9 +47,8 @@ export default function RootLayout({
       >
         <NavbarMenu />
         <div className="hidden lg:block">
-
-        </div>
         <SmoothCursor />
+        </div>
         {children}
         <Footer />
       </body>
