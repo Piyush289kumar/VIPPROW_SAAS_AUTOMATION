@@ -6,6 +6,9 @@ import Footer from "./components/ui/Footer";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { Navbar } from "@/components/ui/resizable-navbar";
 import { NavbarMenu } from "./components/ui/Navbar";
+import ReduxProvider from "@/providers/ReduxProvider";
+import QueryProvider from "@/providers/QueryProvider";
+import AppConfigLoader from "@/providers/AppConfigLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,12 +48,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} antialiased bg-black`}
       >
-        <NavbarMenu />
-        <div className="hidden lg:block">
-        <SmoothCursor />
-        </div>
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <QueryProvider>
+            <AppConfigLoader/>
+            <NavbarMenu />
+            <div className="hidden lg:block">
+              <SmoothCursor />
+            </div>
+            {children}
+            <Footer />
+          </QueryProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -20,8 +20,12 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
   return (
-    <div className={cn("flex flex-col gap-6 min-w-auto md:min-w-lg", className)} {...props}>
+    <div
+      className={cn("flex flex-col gap-6 min-w-auto md:min-w-lg", className)}
+      {...props}
+    >
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Get in touch</CardTitle>
@@ -73,7 +77,6 @@ export function LoginForm({
                 />
               </Field>
 
-
               <Field>
                 <Button type="submit">Get in touch</Button>
               </Field>
@@ -82,8 +85,7 @@ export function LoginForm({
         </CardContent>
       </Card>
       <FieldDescription className="px-6 text-center hid">
-       Our <a href="#">Terms of Service</a>{" "}
-        and <a href="#">Privacy Policy</a>.
+        Our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
       </FieldDescription>
     </div>
   );

@@ -2,8 +2,17 @@
 
 import { Mail, Phone, MapPin } from "lucide-react";
 import ContactForm from "../ui/form/contactForm";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { AppConfig } from "@/types/app-config";
 
 export default function ContactSection() {
+
+    const appConfig = useSelector(
+    (state: RootState) => state.appConfig.data as AppConfig | null,
+  );
+
+
   return (
     <section className="relative pb-28 px-6">
       <div className="mx-auto flex flex-col-reverse md:flex-row justify-between gap-40 md:gap-4 max-w-6xl">
@@ -29,7 +38,7 @@ export default function ContactSection() {
               title="Email"
               value="hello@yourcompany.com"
             />
-            <InfoItem icon={<Phone />} title="Phone" value="+91 79747-18311" />
+            <InfoItem icon={<Phone />} title="Phone" value={`${appConfig?.phoneNumber}`} />
             <InfoItem
               icon={<MapPin />}
               title="Location"
