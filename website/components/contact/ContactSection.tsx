@@ -36,13 +36,13 @@ export default function ContactSection() {
             <InfoItem
               icon={<Mail />}
               title="Email"
-              value="hello@yourcompany.com"
+              value={`${appConfig?.email}`}
             />
             <InfoItem icon={<Phone />} title="Phone" value={`${appConfig?.phoneNumber}`} />
             <InfoItem
               icon={<MapPin />}
               title="Location"
-              value="India · Remote Worldwide"
+              value={`${appConfig?.companyAddress[0]?.address}`}
             />
           </div>
         </div>
