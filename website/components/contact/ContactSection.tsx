@@ -6,7 +6,7 @@ import ContactForm from "../ui/form/contactForm";
 export default function ContactSection() {
   return (
     <section className="relative pb-28 px-6">
-      <div className="mx-auto flex justify-between gap-4 max-w-6xl">
+      <div className="mx-auto flex flex-col-reverse md:flex-row justify-between gap-40 md:gap-4 max-w-6xl">
         {/* LEFT CONTENT */}
         <div>
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
