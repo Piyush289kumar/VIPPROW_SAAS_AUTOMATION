@@ -23,41 +23,6 @@ export const createContactUs = async (req, res) => {
     }
 
     // ---------------------------------------------
-    // 🌟 EXTRA VALIDATION BASED ON TYPE
-    // ---------------------------------------------
-
-    if (type === "course_inquiry") {
-      if (!meta?.course_selection) {
-        return res.status(400).json({
-          status: "error",
-          message: "Course selection is required for Course Inquiry.",
-        });
-      }
-    }
-
-    if (type === "franchise_form") {
-      if (!meta?.occupation) {
-        return res.status(400).json({
-          status: "error",
-          message: "Occupation is required for Franchise Form.",
-        });
-      }
-      if (!meta?.state || !meta?.city) {
-        return res.status(400).json({
-          status: "error",
-          message: "State and City are required for Franchise Form.",
-        });
-      }
-      if (!meta?.floor_space_sqft) {
-        return res.status(400).json({
-          status: "error",
-          message:
-            "Available floor space (sqft) is required for Franchise Form.",
-        });
-      }
-    }
-
-    // ---------------------------------------------
     // 🌟 CREATE DOCUMENT
     // ---------------------------------------------
     const contact = await ContactUs.create({
@@ -188,7 +153,7 @@ export const partiallyUpdateContactUs = async (req, res) => {
     const updated = await ContactUs.findByIdAndUpdate(
       req.params.id,
       { $set: data },
-      { new: true }
+      { new: true },
     );
 
     if (!updated) {

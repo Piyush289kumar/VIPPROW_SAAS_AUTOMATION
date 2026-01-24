@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
-import { Navbar } from "@/components/ui/resizable-navbar";
 import { NavbarMenu } from "./components/ui/Navbar";
 import ReduxProvider from "@/providers/ReduxProvider";
 import QueryProvider from "@/providers/QueryProvider";
 import AppConfigLoader from "@/providers/AppConfigLoader";
+import {Toaster} from 'react-hot-toast'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,6 +56,7 @@ export default function RootLayout({
             </div>
             {children}
             <Footer />
+            <Toaster position="bottom-center"/>
           </QueryProvider>
         </ReduxProvider>
       </body>

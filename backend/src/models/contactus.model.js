@@ -12,15 +12,13 @@ const contactUsSchema = new Schema(
       type: String,
       required: true,
       enum: [
-        "course_inquiry",
-        "franchise_inquiry",
-        "general_inquiry",
-        "brochure_download",
-        "career",
-        "event_booking",
+        "General",
+        "Career",
+        "Services",
         "other",
       ],
       index: true,
+      default: "General"
     },
 
     // 👤 User Details

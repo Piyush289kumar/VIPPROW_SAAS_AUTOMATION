@@ -15,11 +15,59 @@ import {
   FieldSeparator,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import React, { useState } from "react";
+import { useSubmitContactForm } from "@/app/features/contact/hook/useContact";
+import toast from "react-hot-toast";
 
 export function ContactForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const submitMutation = useSubmitContactForm();
+  const [form, setForm] = useState({
+    type: "General",
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    subject: "",
+  });
+
+  // Handle On Change Inputs
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle Form Submit
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    submitMutation.mutate(form, {
+      onSuccess: () => {
+        console.log("Form submitted successfully.");
+        toast.success("Form submitted successfully.");
+        setForm({
+          type: "General",
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          subject: "",
+        });
+      },
+      onError: (err: unknown) => {
+        const errorMessage =
+          (err as { response?: { data?: { message?: string } } })?.response
+            ?.data?.message || "Something went wrong. Try again";
+
+        toast.error(errorMessage);
+        console.log(errorMessage);
+      },
+    });
+  };
 
   return (
     <div
@@ -32,17 +80,20 @@ export function ContactForm({
           <CardDescription>Get in touch description</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleSubmit}>
             <FieldGroup>
               <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
                 Fill form text
               </FieldSeparator>
               <Field>
-                <FieldLabel htmlFor="fullname">Full Name</FieldLabel>
+                <FieldLabel htmlFor="name">Full Name</FieldLabel>
                 <Input
-                  id="fullname"
+                  id="name"
                   type="text"
                   placeholder="full name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
                   required
                 />
               </Field>
@@ -52,7 +103,12 @@ export function ContactForm({
                 <Input
                   id="fullname"
                   type="text"
-                  placeholder="+91 1234567890"
+                  placeholder="1234567890"
+                  min={10}
+                  max={10}
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
                   required
                 />
               </Field>
@@ -62,23 +118,31 @@ export function ContactForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="Enter email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
                   required
                 />
               </Field>
 
               <Field>
-                <FieldLabel htmlFor="email">Message</FieldLabel>
+                <FieldLabel htmlFor="message">Message</FieldLabel>
                 <Input
                   id="message"
-                  type="tel"
-                  placeholder="m@example.com"
+                  type="text"
+                  placeholder="message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
                   required
                 />
               </Field>
 
               <Field>
-                <Button type="submit">Get in touch</Button>
+                <Button type="submit" disabled={submitMutation.isPaused}>
+                  {submitMutation.isPending ? "Submitting" : "Get in touch"}
+                </Button>
               </Field>
             </FieldGroup>
           </form>
