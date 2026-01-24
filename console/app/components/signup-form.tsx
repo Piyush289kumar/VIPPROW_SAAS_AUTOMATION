@@ -12,7 +12,7 @@ import { Input } from "~/components/ui/input";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // for redirect
 import { useAuth } from "~/hooks/useAuth";
-import belleza_logo from "@/welcome/belleza_logo.svg";
+import belleza_logo from "@/welcome/vipprow.png";
 
 export function SignupForm({
   className,
