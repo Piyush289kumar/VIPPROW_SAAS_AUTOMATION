@@ -7,7 +7,7 @@ import { NavbarMenu } from "./components/ui/Navbar";
 import ReduxProvider from "@/providers/ReduxProvider";
 import QueryProvider from "@/providers/QueryProvider";
 import AppConfigLoader from "@/providers/AppConfigLoader";
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,14 +49,17 @@ export default function RootLayout({
       >
         <ReduxProvider>
           <QueryProvider>
-            <AppConfigLoader/>
+            <AppConfigLoader />
             <NavbarMenu />
-            <div className="hidden lg:block">
-              <SmoothCursor />
-            </div>
+            {process.env.NODE_ENV === "development" ? null : (
+              <div className="hidden lg:block">
+                <SmoothCursor />
+              </div>
+            )}
+
             {children}
             <Footer />
-            <Toaster position="bottom-center"/>
+            <Toaster position="bottom-center" />
           </QueryProvider>
         </ReduxProvider>
       </body>
