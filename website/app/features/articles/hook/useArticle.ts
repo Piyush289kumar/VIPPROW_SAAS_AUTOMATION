@@ -9,7 +9,7 @@ import {
   fetchArticleById,
   fetchPublicArticles,
 } from "../services/article.api";
-import { Article } from "@/types/Article";
+import { Article } from "@/types/article";
 
 export const usePublicArticles = (query: ArticleQuery = {}) => {
   return useQuery<ArticleResponse>({

@@ -1,22 +1,22 @@
-"use client";
-
 import { CTA } from "@/components/magic-ui/CTA";
 import EditorialCard from "@/components/ui/cards/EditorialCard";
-import EditorialGrid from "@/components/ui/EditorialGrid";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 import { useDebounce } from "@/lib/useDebounce";
+import { motion } from "framer-motion";
 // import { useState } from "react";
 import { usePublicArticles } from "../features/articles/hook/useArticle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Pagination } from "@/components/ui/Pagination";
 
 export default function ArticlesPage() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<string[]>([]);
   const debouncedSearch = useDebounce(search, 500);
+
   const { data, isLoading, isError } = usePublicArticles({
     page,
-    limit: 10,
+    limit: 2,
     sortBy: "createdAt",
     sortOrder: "desc",
     filter: "active",
@@ -24,13 +24,16 @@ export default function ArticlesPage() {
     categories: filters,
   });
 
-  const handlePageChange = (newPage: number) => {
-    if (newPage > 0 && newPage != page) {
-      setPage(newPage);
-    }
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    setPage(1);
   };
 
-  const totalPages = data?.pagination?.totalPage || 1;
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
+
+  const totalPages = data?.pagination?.totalPages ?? 1;
 
   return (
     <main className="py-44 max-w-7xl mx-auto">
@@ -39,11 +42,43 @@ export default function ArticlesPage() {
         des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insights to streamline your operations."
       />
 
+      <div>
+        {isLoading && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-5"
+          >
+            Loading articles....
+          </motion.p>
+        )}
+
+        {isError && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-5 text-danger"
+          >
+            Error loading articles.
+          </motion.p>
+        )}
+
+        {!isLoading && data?.data?.length === 0 && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-5"
+          >
+            No articles available.
+          </motion.p>
+        )}
+      </div>
+
       <section className="bg-black px-6 py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data?.data?.map((item, index) => (
+          {data?.data?.map((item) => (
             <EditorialCard
-              key={index}
+              key={item._id}
               image={item.thumbnail ?? "/image/placeholder.png"}
               title={item.title ?? "Untitle Article"}
               category_name={
@@ -55,15 +90,14 @@ export default function ArticlesPage() {
           ))}
         </div>
 
-        {}
         {/* Pagination */}
-        {/* {totalPages > 1 && (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-              />
-            )} */}
+        {totalPages > 1 && (
+          <Pagination
+            currentPage={page}
+            totalPages={totalPages}
+            onPageChange={setPage}
+          />
+        )}
       </section>
 
       {/* CTA Start */}

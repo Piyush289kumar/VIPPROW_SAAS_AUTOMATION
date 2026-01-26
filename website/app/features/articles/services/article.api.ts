@@ -1,7 +1,7 @@
 // website\app\features\articles\services\article.api.ts
 
 import { API } from "@/lib/axiosClient";
-import { Article } from "@/types/Article";
+import { Article } from "@/types/article";
 
 export interface ArticleQuery {
   page?: number;
@@ -19,7 +19,7 @@ export interface ArticleResponse {
     total: number;
     page: number;
     limit: number;
-    totalPage: number;
+    totalPages: number;
   };
 }
 
