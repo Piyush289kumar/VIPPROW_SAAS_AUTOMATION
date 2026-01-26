@@ -1,6 +1,17 @@
+"use client";
+import { usePublicPolicies } from "@/app/features/policy/hook/usePolicy";
 import Link from "next/link";
 
 export default function Footer() {
+  const { data, isLoading, isError } = usePublicPolicies({
+    page: 1,
+    limit: 10,
+    sortBy: "createdAt",
+    sortOrder: "asc",
+  });
+
+  const policies = data?.data;
+
   return (
     <footer className="flex flex-wrap justify-start md:justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-5 px-5 pt-20 w-full mx-auto  text-lg md:text-md text-gray-500 ">
       <div className="flex flex-wrap justify-start md:justify-center flex-col md:flex-row items-start gap-10 md:gap-[60px] xl:gap-[140px] w-full">
@@ -95,16 +106,15 @@ export default function Footer() {
         <div>
           <p className="text-slate-100 font-semibold">Legal</p>
           <ul className="mt-2 space-y-2">
-            <li>
-              <Link href="/" className="hover:text-indigo-600 transition">
-                Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-indigo-600 transition">
-                Terms
-              </Link>
-            </li>
+            {policies?.map(({ title, _id }) => {
+              return (
+                <li key={_id}>
+                  <Link href="/" className="hover:text-indigo-600 transition">
+                    {title ?? "Untitle"}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
