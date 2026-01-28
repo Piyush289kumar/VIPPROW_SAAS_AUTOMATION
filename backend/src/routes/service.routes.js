@@ -3,12 +3,12 @@ import { ensureAuth } from "../middleware/authMiddleware.js";
 import upload from "../config/multer.js";
 import {
   createService,
-  getServices,
   getServiceById,
   updateService,
   partiallyUpdateService,
   destroyServiceById,
   getAllActiveServices,
+  getAllServices,
 } from "../controllers/service.controller.js";
 
 const router = Router();
@@ -22,7 +22,7 @@ router.get("/public/:id", getServiceById);
 /* ================================
    🔒 Admin-Protected Routes
    ================================ */
-router.get("/", ensureAuth, getServices);
+router.get("/", ensureAuth, getAllServices);
 router.get("/:id", ensureAuth, getServiceById);
 
 // Create Service (with optional thumbnail upload)

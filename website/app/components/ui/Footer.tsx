@@ -1,6 +1,17 @@
+"use client";
+import { usePublicPolicies } from "@/app/features/policy/hook/usePolicy";
 import Link from "next/link";
 
 export default function Footer() {
+  const { data, isLoading, isError } = usePublicPolicies({
+    page: 1,
+    limit: 10,
+    sortBy: "createdAt",
+    sortOrder: "asc",
+  });
+
+  const policies = data?.data;
+
   return (
     <footer className="flex flex-wrap justify-start md:justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-5 px-5 pt-20 w-full mx-auto  text-lg md:text-md text-gray-500 ">
       <div className="flex flex-wrap justify-start md:justify-center flex-col md:flex-row items-start gap-10 md:gap-[60px] xl:gap-[140px] w-full">
@@ -28,8 +39,8 @@ export default function Footer() {
                 y2="32"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#F8FAFC" />
-                <stop offset="1" stop-color="#383838" />
+                <stop stopColor="#F8FAFC" />
+                <stop offset="1" stopColor="#383838" />
               </linearGradient>
             </defs>
           </svg>
@@ -95,16 +106,15 @@ export default function Footer() {
         <div>
           <p className="text-slate-100 font-semibold">Legal</p>
           <ul className="mt-2 space-y-2">
-            <li>
-              <Link href="/" className="hover:text-indigo-600 transition">
-                Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:text-indigo-600 transition">
-                Terms
-              </Link>
-            </li>
+            {policies?.map(({ title, _id }) => {
+              return (
+                <li key={_id}>
+                  <Link href={`/policy/details/${_id}`} className="hover:text-indigo-600 transition">
+                    {title ?? "Untitle"}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -126,9 +136,9 @@ export default function Footer() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-dribbble size-5 hover:text-indigo-500"
                 aria-hidden="true"
               >
@@ -150,9 +160,9 @@ export default function Footer() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-linkedin size-5 hover:text-indigo-500"
                 aria-hidden="true"
               >
@@ -173,9 +183,9 @@ export default function Footer() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-twitter size-5 hover:text-indigo-500"
                 aria-hidden="true"
               >
@@ -194,9 +204,9 @@ export default function Footer() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-youtube size-6 hover:text-indigo-500"
                 aria-hidden="true"
               >

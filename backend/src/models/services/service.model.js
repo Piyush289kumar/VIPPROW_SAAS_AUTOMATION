@@ -10,6 +10,13 @@ const serviceSchema = new mongoose.Schema(
       maxlength: [100, "Title cannot exceed 100 characters."],
     },
 
+    domain: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Domain",
+      required: true,
+      index: true,
+    },
+
     subHeading: {
       type: String,
       trim: true,
@@ -31,7 +38,7 @@ const serviceSchema = new mongoose.Schema(
       validate: {
         validator: (v) =>
           !v || /^https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif)$/i.test(v),
-        message: "Avatar must be a valid image URL.",
+        message: "Thumbnail must be a valid image URL.",
       },
     },
 
@@ -59,7 +66,7 @@ const serviceSchema = new mongoose.Schema(
     collection: "services",
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
-  }
+  },
 );
 
 // ✅ Index for faster sorting by date and filtering by activity

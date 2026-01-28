@@ -127,6 +127,22 @@ export default function ContactPage() {
       ),
     },
 
+
+     {
+      accessorKey: "type",
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Type <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      ),
+      cell: ({ row }) => (
+        <span className="font-medium">{row.original.type}</span>
+      ),
+    },
+
     {
       accessorKey: "name",
       header: ({ column }) => (
@@ -161,11 +177,11 @@ export default function ContactPage() {
       cell: ({ row }) => row.original.phone || "-",
     },
 
-    {
-      accessorKey: "subject",
-      header: "Subject",
-      cell: ({ row }) => row.original.subject || "-",
-    },
+    // {
+    //   accessorKey: "subject",
+    //   header: "Subject",
+    //   cell: ({ row }) => row.original.subject || "-",
+    // },
 
     {
       accessorKey: "status",
