@@ -93,7 +93,7 @@ export const getServiceById = async (req, res) => {
  */
 export const createService = async (req, res) => {
   try {
-    const { title, subHeading, description, isActive } = req.body;
+    const { title, domain, subHeading, description, isActive } = req.body;
 
     if (!title || !description)
       return res
@@ -116,6 +116,7 @@ export const createService = async (req, res) => {
 
     const service = await Service.create({
       title,
+      domain : domain || null,
       subHeading,
       description,
       thumbnail: thumbnailUrl,
@@ -139,7 +140,7 @@ export const createService = async (req, res) => {
 export const updateService = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, subHeading, description, isActive } = req.body;
+    const { title, domain, subHeading, description, isActive } = req.body;
 
     const service = await Service.findById(id);
     if (!service)
@@ -167,6 +168,7 @@ export const updateService = async (req, res) => {
 
     // Update fields
     service.title = title ?? service.title;
+    service.domain = domain ?? service.domain;
     service.subHeading = subHeading ?? service.subHeading;
     service.description = description ?? service.description;
     service.isActive = isActive ?? service.isActive;
