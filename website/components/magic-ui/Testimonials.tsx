@@ -7,6 +7,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useTestimonials } from "@/app/features/testimonial/hook/useTestimonial";
 
 const reviews = [
   {
@@ -35,9 +36,29 @@ const reviews = [
 ];
 
 export function TestimonialMarquee() {
+  const { data, isLoading, isError } = useTestimonials({
+    page: 1,
+    limit: 12,
+    sortBy: "createdAt",
+    sortOrder: "desc",
+    search: "",
+  });
+
+  const testimonials = data?.data || [];
+
   return (
     <section className="w-full bg-black py-16">
       <div className="max-w-7xl mx-auto px-6">
+        {/* States */}
+        {isLoading && (
+          <p className="text-center text-sm">Loading testimonials...</p>
+        )}
+        {isError && (
+          <p className="text-center text-sm text-red-400">
+            Failed to load testimonials.
+          </p>
+        )}
+
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -46,37 +67,40 @@ export function TestimonialMarquee() {
           loop
           className="w-full"
         >
-          {reviews.map((review, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mx-2 md:mx-20">
-                {/* LEFT CONTENT */}
-                <div className="text-white font-heading">
-                  <p
-                    className="text-lg leading-relaxed text-gray-300 [&_span]:text-white [&_span]:font-semibold mb-10"
-                    dangerouslySetInnerHTML={{ __html: review.body }}
-                  />
-
-                  <h3 className="text-md font-normal mb-2 italic">
-                    {review.name}
-                  </h3>
-                  <p className="text-sm text-gray-200 italic">
-                    {review.username}
-                  </p>
-                </div>
-
-                {/* RIGHT IMAGE */}
-                <div className="flex justify-center md:justify-end">
-                  <div className="relative w-[280px] h-[360px] rounded-full overflow-hidden">
-                    <img
-                      src={review.img}
-                      alt={review.name}
-                      className="w-full h-full object-cover"
+          {testimonials.length &&
+            testimonials.map((testimonial, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mx-2 md:mx-20">
+                  {/* LEFT CONTENT */}
+                  <div className="text-white font-heading">
+                    <p
+                      className="text-lg leading-relaxed text-gray-300 [&_span]:text-white [&_span]:font-semibold mb-10"
+                      dangerouslySetInnerHTML={{
+                        __html: testimonial.description || "",
+                      }}
                     />
+
+                    <h3 className="text-md font-normal mb-2 italic">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-sm text-gray-200 italic">
+                      {testimonial.designation}
+                    </p>
+                  </div>
+
+                  {/* RIGHT IMAGE */}
+                  <div className="flex justify-center md:justify-end">
+                    <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden">
+                      <img
+                        src={testimonial.avatar ?? ""}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
 
@@ -122,11 +146,11 @@ export function TestimonialMarquee() {
           cursor: not-allowed;
           transform: scale(1);
         }
-        .swiper-pagination-bullet{
-          background:#fff;
+        .swiper-pagination-bullet {
+          background: #fff;
         }
-        .swiper-pagination-bullet-active{
-          background:#fff;
+        .swiper-pagination-bullet-active {
+          background: #fff;
         }
       `}</style>
     </section>
