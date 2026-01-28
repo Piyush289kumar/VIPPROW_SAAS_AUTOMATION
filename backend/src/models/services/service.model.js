@@ -12,8 +12,8 @@ const serviceSchema = new mongoose.Schema(
 
     domain: {
       type: mongoose.Schema.Types.ObjectId,
-      require: true,
-      default: "Digital marketing",
+      ref: "Domain",
+      required: true,
       index: true,
     },
 

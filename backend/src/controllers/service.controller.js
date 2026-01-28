@@ -1,68 +1,115 @@
 import slugify from "slugify";
-import Service from "../models/service.model.js";
+import Service from "../models/services/service.model.js";
 import {
   destroyFromCloudinary,
   uploadToCloudinary,
 } from "../utils/cloudinaryService.js";
 
-/**
- * 🟢 Get All Services (Admin)
- */
-export const getServices = async (req, res) => {
-  try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-    const skip = (page - 1) * limit;
-    const search = req.query.search || "";
+/* ============================
+   🟢 PUBLIC CONTROLLERS
+============================ */
 
-    const filter = search
+export const getAllActiveServices = async (req, res) => {
+  try {
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 10;
+
+    const sortBy = req.query.sortBy || "createdAt"; // Added
+    const sortOrder = req.query.sortOrder || "desc"; // Added: "asc" or "desc"
+
+    const search = req.query.search?.trim() || "";
+    const domains = req.query.domains?.split(",") || [];
+
+    // ------------------------------
+    // Base Match Query
+    // ------------------------------
+    const matchQuery = { isActive: true };
+
+    // 🏷 Domain FILTER
+    if (domains.length > 0 && domains[0] !== "") {
+      matchQuery.domain = {
+        $in: domains.map((id) => new mongoose.Types.ObjectId(id)),
+      };
+    }
+
+    // 🔍 SEARCH by title, description, and domain name
+    const searchQuery = search
       ? {
           $or: [
-            { title: new RegExp(search, "i") },
-            { subHeading: new RegExp(search, "i") },
-            { description: new RegExp(search, "i") },
+            { title: { $regex: search, $options: "i" } },
+            { description: { $regex: search, $options: "i" } },
+            { "domain.name": { $regex: search, $options: "i" } },
           ],
         }
       : {};
 
-    const total = await Service.countDocuments(filter);
-    const services = await Service.find(filter)
-      .populate("createdBy updatedBy", "name email")
-      .sort({ createdAt: -1 })
-      .skip(skip)
-      .limit(limit)
-      .lean();
+    // ------------------------------
+    // DYNAMIC SORT
+    // ------------------------------
+    const sortDirection = sortOrder === "asc" ? 1 : -1;
+
+    // ------------------------------
+    // AGGREGATION PIPELINE
+    // ------------------------------
+    const pipeline = [
+      { $match: matchQuery },
+
+      // Join domain data
+      {
+        $lookup: {
+          from: "domains",
+          localField: "domain",
+          foreignField: "_id",
+          as: "domain",
+        },
+      },
+
+      { $unwind: { path: "$domain", preserveNullAndEmptyArrays: true } },
+
+      { $match: searchQuery },
+
+      { $sort: { [sortBy]: sortDirection } }, // ✅ Dynamic sort
+
+      { $skip: (page - 1) * limit },
+      { $limit: limit },
+    ];
+
+    // Count pipeline
+    const countPipeline = [
+      { $match: matchQuery },
+      {
+        $lookup: {
+          from: "domains",
+          localField: "domain",
+          foreignField: "_id",
+          as: "domain",
+        },
+      },
+      { $unwind: { path: "$domain", preserveNullAndEmptyArrays: true } },
+      { $match: searchQuery },
+      { $count: "total" },
+    ];
+
+    const [services, countResult] = await Promise.all([
+      Service.aggregate(pipeline),
+      Service.aggregate(countPipeline),
+    ]);
+
+    const total = countResult[0]?.total || 0;
 
     res.status(200).json({
-      message: "Services fetched successfully.",
+      success: true,
       data: services,
       pagination: {
         total,
         page,
-        totalPages: Math.ceil(total / limit),
         limit,
+        totalPages: Math.ceil(total / limit),
       },
     });
-  } catch (error) {
-    res.status(500).json({ message: "Internal Error", error: error.message });
-  }
-};
-
-/**
- * 🟢 Get Active Services (Public)
- */
-export const getAllActiveServices = async (req, res) => {
-  try {
-    const services = await Service.fetchActive(12);
-    if (!services.length)
-      return res.status(404).json({ message: "No active services found." });
-
-    res.status(200).json({
-      message: "Active services fetched successfully.",
-      data: services,
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Internal Error", error: error.message });
+  } catch (err) {
+    console.error("❌ Error fetching services:", err);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
 
@@ -73,7 +120,7 @@ export const getServiceById = async (req, res) => {
   try {
     const { id } = req.params;
     const service = await Service.findById(id)
-      .populate("createdBy updatedBy", "name email")
+      .populate("domain", "name slug")
       .lean();
 
     if (!service)
@@ -85,6 +132,70 @@ export const getServiceById = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ message: "Internal Error", error: error.message });
+  }
+};
+
+
+/* ============================
+   🔒 ADMIN — GET ALL Services (with filters)
+============================ */
+export const getAllServices = async (req, res) => {
+  try {
+    const {
+      page = 1,
+      limit = 10,
+      search = "",
+      sortBy = "createdAt",
+      sortOrder = "desc",
+      filter = "all",
+    } = req.query;
+
+    let filterQuery = {};
+
+    // ⭐ Status filters
+    if (filter === "active") filterQuery.isActive = true;
+    if (filter === "inactive") filterQuery.isActive = false;
+
+    // ⭐ Search filter
+    const searchQuery = search
+      ? {
+          $or: [
+            { title: { $regex: search, $options: "i" } },
+            { description: { $regex: search, $options: "i" } },
+            { "seo.metaKeywords": { $regex: search, $options: "i" } },
+          ],
+        }
+      : {};
+
+    // ⭐ Final combined query
+    const finalQuery = {
+      ...filterQuery,
+      ...searchQuery,
+    };
+
+    const total = await Service.countDocuments(finalQuery);
+
+    const services = await Service.find(finalQuery)
+      .populate("domain", "name slug")
+      .populate("createdBy updatedBy", "name email")
+      .sort({ [sortBy]: sortOrder === "asc" ? 1 : -1 })
+      .skip((page - 1) * limit)
+      .limit(limit)
+      .lean();
+
+    res.json({
+      success: true,
+      data: services,
+      pagination: {
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: err.message ?? "Internal Server Error" });
   }
 };
 
@@ -109,14 +220,14 @@ export const createService = async (req, res) => {
     if (req.files?.thumbnail?.[0]?.path) {
       const uploadThumb = await uploadToCloudinary(
         req.files.thumbnail[0].path,
-        "service/thumbnail"
+        "service/thumbnail",
       );
       thumbnailUrl = uploadThumb.secure_url;
     }
 
     const service = await Service.create({
       title,
-      domain : domain || null,
+      domain: domain || null,
       subHeading,
       description,
       thumbnail: thumbnailUrl,
@@ -161,7 +272,7 @@ export const updateService = async (req, res) => {
 
       const uploadThumb = await uploadToCloudinary(
         req.files.thumbnail[0].path,
-        "service/thumbnail"
+        "service/thumbnail",
       );
       thumbnailUrl = uploadThumb.secure_url;
     }
