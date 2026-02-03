@@ -1,20 +1,18 @@
-"use client";
-import { PartnerBrandMarquee } from "@/components/magic-ui/PartnerBrandMarquee";
 import HeroSection from "./components/ui/HeroSection";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
-import { BentoGridSection } from "@/components/aceternity-ui/BentoGrid";
-import { TestimonialMarquee } from "@/components/magic-ui/Testimonials";
 import EditorialGrid from "@/components/ui/EditorialGrid";
-import { CTA } from "@/components/magic-ui/CTA";
-import MultiSectionScroller from "@/components/ui/MultiSectionScroller";
 import ServiceCardGrid from "@/components/ui/ServiceCardGrid";
+import ClientCTA from "@/components/client-sections/ClientCTA";
+import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimonialMarquee";
+import ClientBentoGridSection from "@/components/client-sections/ClientBentoGridSection";
+import ClientPartnerBrandMarquee from "@/components/client-sections/ClientPartnerBrandMarquee";
 
 export default function Home() {
   return (
     <>
       <div className="bg-transparent">
         <HeroSection />
-        <PartnerBrandMarquee />
+        <ClientPartnerBrandMarquee />
 
         {/* Services Start */}
         <div className="pt-20 max-w-7xl mx-auto">
@@ -32,7 +30,7 @@ export default function Home() {
             heading="Empower Your Workflow with AI"
             des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
           />
-          <BentoGridSection />
+          <ClientBentoGridSection />
         </div>
         {/* Bento Grid End */}
 
@@ -42,7 +40,7 @@ export default function Home() {
             heading="Empower Your Workflow with AI"
             des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
           />
-          <TestimonialMarquee />
+          <ClientTestimonialMarquee />
         </div>
         {/* Testimonial End */}
 
@@ -58,7 +56,7 @@ export default function Home() {
 
         {/* CTA Start */}
         <div className="pt-20 max-w-7xl mx-auto">
-          <CTA />
+          <ClientCTA />
         </div>
         {/* CTA End */}
       </div>

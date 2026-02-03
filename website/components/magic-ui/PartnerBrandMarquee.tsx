@@ -114,7 +114,7 @@ const ReviewCard = ({
   );
 };
 
-export function PartnerBrandMarquee() {
+export default function PartnerBrandMarquee() {
   return (
     <div className="relative flex w-full max-w-7xl flex-col items-center justify-center overflow-hidden mx-auto h-32">
       <Marquee pauseOnHover className="[--duration:40s] !gap-0">

@@ -1,7 +1,7 @@
+import ClientCTA from "@/components/client-sections/ClientCTA";
+import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimonialMarquee";
 import DigitalMarketingHeroSection from "@/components/custom-ui/DigitalMarketingHeroSection";
 import InfoSection from "@/components/custom-ui/InfoSection";
-import { CTA } from "@/components/magic-ui/CTA";
-import { TestimonialMarquee } from "@/components/magic-ui/Testimonials";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
@@ -26,13 +26,13 @@ export default function DigitalMarketingPage() {
           heading="Empower Your Workflow with AI"
           des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
         />
-        <TestimonialMarquee />
+        <ClientTestimonialMarquee />
       </div>
       {/* Testimonial End */}
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">
-        <CTA />
+        <ClientCTA />
       </div>
       {/* CTA End */}
     </>

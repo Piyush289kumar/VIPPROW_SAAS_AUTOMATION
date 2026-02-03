@@ -1,7 +1,6 @@
 import { LampSection } from "@/components/aceternity-ui/LampSection";
+import ClientCTA from "@/components/client-sections/ClientCTA";
 import ContactSection from "@/components/contact/ContactSection";
-import { CTA } from "@/components/magic-ui/CTA";
-// import ContactSection from "@/components/contact/ContactSection";
 
 export default function ContactPage() {
   return (
@@ -14,7 +13,7 @@ export default function ContactPage() {
 
       {/* CTA */}
       <div className="pt-24">
-        <CTA />
+        <ClientCTA />
       </div>
     </main>
   );

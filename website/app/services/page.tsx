@@ -1,6 +1,6 @@
 import { ClientCardCarousel } from "@/components/aceternity-ui/ClientCardCarousel";
 import { HeroHighlightSection } from "@/components/aceternity-ui/HeroHighlightSection";
-import { CTA } from "@/components/magic-ui/CTA";
+import ClientCTA from "@/components/client-sections/ClientCTA";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
@@ -27,7 +27,7 @@ export default function ServicesPage() {
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">
-        <CTA />
+        <ClientCTA />
       </div>
       {/* CTA End */}
     </>

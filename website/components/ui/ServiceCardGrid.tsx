@@ -1,5 +1,3 @@
-"use client";
-
 import { AnimatedSVGCard } from "../aceternity-ui/card/AnimatedSVGCard";
 
 export default function ServiceCardGrid() {

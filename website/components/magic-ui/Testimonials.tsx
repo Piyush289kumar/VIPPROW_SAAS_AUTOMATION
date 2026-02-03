@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,7 +34,7 @@ const reviews = [
   },
 ];
 
-export function TestimonialMarquee() {
+export default function TestimonialMarquee() {
   const { data, isLoading, isError } = useTestimonials({
     page: 1,
     limit: 12,

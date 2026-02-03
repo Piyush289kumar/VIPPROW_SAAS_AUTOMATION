@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import EditorialCard from "@/components/ui/cards/EditorialCard";
 import { fetchPublicArticles } from "@/app/features/articles/services/article.api";
+import { useEffect, useState } from "react";
 import { Article } from "@/types/article";
 
 interface EditorialGridProps {
@@ -42,9 +42,7 @@ export default function EditorialGrid({
 
   if (loading) {
     return (
-      <section className="px-6 py-16 text-white">
-        Loading articles...
-      </section>
+      <section className="px-6 py-16 text-white">Loading articles...</section>
     );
   }
 

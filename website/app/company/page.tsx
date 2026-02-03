@@ -1,8 +1,7 @@
 import { BackgroundRippleEffect } from "@/components/aceternity-ui/BackgroundRippleEffec";
-import { AnimatedSVGCard } from "@/components/aceternity-ui/card/AnimatedSVGCard";
 import CompanyStory from "@/components/aceternity-ui/sections/CompanyStory";
-import { CTA } from "@/components/magic-ui/CTA";
-import { PartnerBrandMarquee } from "@/components/magic-ui/PartnerBrandMarquee";
+import ClientCTA from "@/components/client-sections/ClientCTA";
+import ClientPartnerBrandMarquee from "@/components/client-sections/ClientPartnerBrandMarquee";
 import MissionSection from "@/components/ui/cards/MissionSection";
 import OurVisionSection from "@/components/ui/cards/OurVisionSection";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
@@ -12,7 +11,7 @@ export default function CompanyPage() {
   return (
     <>
       <BackgroundRippleEffect />
-      <PartnerBrandMarquee />
+      <ClientPartnerBrandMarquee />
 
       {/* Company Story Start */}
       <div className="pt-20 max-w-7xl mx-auto">
@@ -43,7 +42,7 @@ export default function CompanyPage() {
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">
-        <CTA />
+        <ClientCTA />
       </div>
       {/* CTA End */}
     </>

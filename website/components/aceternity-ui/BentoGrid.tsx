@@ -1,10 +1,8 @@
+"use client";
+
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Marquee } from "../ui/marquee";
 import { BentoCard, BentoGrid } from "../ui/bento-grid";
-import { AnimatedListDemo } from "../magic-ui/AnimatedList";
 import { OrbitingCirclesDemo } from "../magic-ui/OrbitingCircles";
 import { AreaChartSection } from "../shadcn/AreaChart";
 import { ChartBarLabelSection } from "../shadcn/ChartBarLabel";
@@ -80,7 +78,7 @@ const features = [
   },
 ];
 
-export function BentoGridSection() {
+export default function BentoGridSection() {
   return (
     <BentoGrid>
       {features.map((feature, idx) => (

@@ -1,10 +1,10 @@
 // app/articles/page.tsx  (NO "use client")
 export const dynamic = "force-dynamic";
-import { CTA } from "@/components/magic-ui/CTA";
 import EditorialCard from "@/components/ui/cards/EditorialCard";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 import { fetchPublicArticles } from "../features/articles/services/article.api";
 import { ArticlesClient } from "./ArticlesClient";
+import ClientCTA from "@/components/client-sections/ClientCTA";
 
 export default async function ArticlesPage({
   searchParams,
@@ -56,7 +56,7 @@ export default async function ArticlesPage({
       </section>
 
       <div className="pt-20 max-w-7xl mx-auto">
-        <CTA />
+        <ClientCTA />
       </div>
     </main>
   );
