@@ -6,6 +6,12 @@ import ClientCTA from "@/components/client-sections/ClientCTA";
 import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimonialMarquee";
 import ClientBentoGridSection from "@/components/client-sections/ClientBentoGridSection";
 import ClientPartnerBrandMarquee from "@/components/client-sections/ClientPartnerBrandMarquee";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ABC VIPPROW",
+  description: "VIPPROW Landing",
+};
 
 export default function Home() {
   return (
