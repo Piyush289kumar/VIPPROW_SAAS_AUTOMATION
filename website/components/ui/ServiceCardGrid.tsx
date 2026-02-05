@@ -6,7 +6,7 @@ export default function ServiceCardGrid() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
         <AnimatedSVGCard href="/digital-marketing"/>
         <AnimatedSVGCard href="/software-as-a-service"/>
-        <AnimatedSVGCard href="#"/>
+        <AnimatedSVGCard href="/automation"/>
       </div>
     </section>
   );

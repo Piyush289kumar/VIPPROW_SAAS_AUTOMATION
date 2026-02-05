@@ -1,0 +1,56 @@
+import ClientCTA from "@/components/client-sections/ClientCTA";
+import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimonialMarquee";
+import AutomationHeroSection from "@/components/custom-ui/AutomationHeroSection";
+import InfoSection from "@/components/custom-ui/InfoSection";
+import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
+import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
+import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
+
+export default function AutomationPage() {
+  return (
+    <>
+      {/* Digital Markting Hero Section Start. */}
+      <AutomationHeroSection />
+      {/* Digital Markting Hero Section End. */}
+
+      {/* Info Section Start */}
+      <InfoSection />
+      {/* Info Section End */}
+
+
+
+      
+      {/* Digital Marketing Feature Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Empower Your Workflow with AI"
+          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+        />
+        <DigitalMarketingFeatureSection />
+      </div>
+      {/* Digital Marketing Feature End */}
+
+
+      {/* Services Start */}
+      <ServiceGridScroller />
+      {/* Services End */}
+
+      {/* Testimonial Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Empower Your Workflow with AI"
+          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+        />
+        <ClientTestimonialMarquee />
+      </div>
+      {/* Testimonial End */}
+
+
+      {/* CTA Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <ClientCTA />
+      </div>
+      {/* CTA End */}
+    </>
+  );
+}

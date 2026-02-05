@@ -2,7 +2,7 @@ import ClientCTA from "@/components/client-sections/ClientCTA";
 import SaaSDetailsHeroSection from "@/components/custom-ui/SaaSDetailsHeroSection";
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
 
-export default function DigitalMarketingArticleDetails() {
+export default function SaasArticleDetails() {
   return (
     <>
       <SaaSDetailsHeroSection />
