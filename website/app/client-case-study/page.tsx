@@ -1,5 +1,6 @@
 import ClientCTA from "@/components/client-sections/ClientCTA";
 import ClientCaseStudyHeroSection from "@/components/custom-ui/ClientCaseStudyHeroSection";
+import FaqSection from "@/components/mvpblock-ui/FAQSection";
 import FlipCardGrid from "@/components/sections/FlipCardGrid";
 import ClientCaseStudyGridScroller from "@/components/ui/cards/ClientCaseStudyGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
@@ -48,6 +49,12 @@ export default function ClientCaseStudyPage() {
         <ClientCaseStudyGridScroller />
       </div>
       {/* Client Category C Grid End. */}
+
+      {/* FAQ Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <FaqSection />
+      </div>
+      {/* FAQ End */}
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">
