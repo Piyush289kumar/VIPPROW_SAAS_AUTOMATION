@@ -28,6 +28,10 @@ export function NavbarMenu() {
       link: "/services",
     },
     {
+      name: "Case Studies",
+      link: "/client-case-study",
+    },
+    {
       name: "Articles",
       link: "/articles",
     },

@@ -1,11 +1,12 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function ClientCaseStudyHeroSection() {
   return (
-    <div className="relative w-full bg-neutral-950">
-      <div className="absolute top-0 z-[0] h-full w-full bg-neutral-900/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(30,78,200,0.3),rgba(255,255,255,0))]"></div>
+    <div className="relative w-full bg-black-950">
+      <div className="absolute top-0 z-[0] h-full w-full bg-black-900/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(30,78,200,0.3),rgba(255,255,255,0))]"></div>
 
       <section className="relative z-1 mx-auto max-w-full">
         <div className="pointer-events-none absolute h-full w-full overflow-hidden opacity-50 [perspective:200px]">
@@ -48,7 +49,9 @@ export default function ClientCaseStudyHeroSection() {
             </div>
           </div>
           <div className="mx-10 mt-32">
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="https://i.postimg.cc/0yk8Vz7t/dashboard.webp"
               className="w-full rounded-lg border shadow-lg"
               alt="unlink"
