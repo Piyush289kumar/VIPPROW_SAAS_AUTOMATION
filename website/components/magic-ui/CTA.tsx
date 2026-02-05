@@ -11,7 +11,7 @@ export default function CTA() {
       <div className="flex h-full w-full flex-col items-center justify-center">
         <GradientBars />
         <TextReveal className="font-heading text-foreground text-center text-4xl">
-          Awesome backgrounds
+        Smart Automation, Real Growth!
         </TextReveal>
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-row gap-4">
