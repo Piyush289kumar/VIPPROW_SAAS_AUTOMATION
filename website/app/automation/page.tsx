@@ -3,23 +3,17 @@ import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimo
 import AutomationHeroSection from "@/components/custom-ui/AutomationHeroSection";
 import InfoSection from "@/components/custom-ui/InfoSection";
 import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
+import FaqSection from "@/components/mvpblock-ui/FAQSection";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
 export default function AutomationPage() {
   return (
     <>
-      {/* Digital Markting Hero Section Start. */}
+      {/* Automation Hero Section Start. */}
       <AutomationHeroSection />
-      {/* Digital Markting Hero Section End. */}
+      {/*Automation Hero Section End. */}
 
-      {/* Info Section Start */}
-      <InfoSection />
-      {/* Info Section End */}
-
-
-
-      
       {/* Digital Marketing Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
@@ -29,11 +23,6 @@ export default function AutomationPage() {
         <DigitalMarketingFeatureSection />
       </div>
       {/* Digital Marketing Feature End */}
-
-
-      {/* Services Start */}
-      <ServiceGridScroller />
-      {/* Services End */}
 
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
@@ -45,6 +34,11 @@ export default function AutomationPage() {
       </div>
       {/* Testimonial End */}
 
+      {/* FAQ Start */}
+      <div className="pt-20 max-w-7xl mx-auto">
+        <FaqSection />
+      </div>
+      {/* FAQ End */}
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">
