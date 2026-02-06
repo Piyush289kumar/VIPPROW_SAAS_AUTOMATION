@@ -6,13 +6,13 @@ import PrimaryHeading from "../ui/heading/PrimaryHeading";
 
 export function HeroHighlightSection() {
   return (
-   <section className="relative w-full h-screen md:h-[500px] overflow-hidden">
+   <section className="relative w-full h-screen md:h-[600px] overflow-hidden">
       {/* Background Shader */}
       <DarkVeil
         hueShift={0}
         noiseIntensity={0}
         scanlineIntensity={0}
-        speed={0.5}
+        speed={0.9}
         scanlineFrequency={2}
         warpAmount={8}
       />
@@ -20,8 +20,8 @@ export function HeroHighlightSection() {
       {/* Centered Content */}
       <div className="absolute inset-0 flex items-center justify-center text-center z-10 px-4">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insights to streamline your operations."
+          heading="Services"
+          des="Ask your AI Agent for real-time"
         />
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function ServicesPage() {
       <HeroHighlightSection />
 
       {/* Service Tab Grid Start. */}
-      <div className="pt-20 max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <PrimaryHeading
           heading="Empower Your Workflow with AI"
           des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
