@@ -1,11 +1,11 @@
 import ClientCTA from "@/components/client-sections/ClientCTA";
-import SaaSDetailsHeroSection from "@/components/custom-ui/SaaSDetailsHeroSection";
+import DigitalMarketingDetailsHeroSection from "@/components/custom-ui/DigitalMarketingDetailsHeroSection";
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
 
 export default function SaasArticleDetails() {
   return (
     <>
-      <SaaSDetailsHeroSection />
+      <DigitalMarketingDetailsHeroSection />
 
       {/* FAQ Start */}
       <div className="pt-20 max-w-7xl mx-auto">
