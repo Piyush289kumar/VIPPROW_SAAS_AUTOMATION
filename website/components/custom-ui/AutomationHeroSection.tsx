@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, CSSProperties } from "react";
 import LaserFlow from "../LaserFlow";
 import Image from "next/image";
 
 export default function AutomationHeroSection() {
-  const revealImgRef = useRef(null);
+  const revealImgRef = useRef<HTMLImageElement>(null);
 
   return (
     <div
@@ -34,9 +34,21 @@ export default function AutomationHeroSection() {
       }}
     >
       <LaserFlow
-        horizontalBeamOffset={0.1}
+        horizontalBeamOffset={0.2}
         verticalBeamOffset={0.0}
         color="#7a94e1"
+        horizontalSizing={0.2}
+        verticalSizing={20}
+        wispDensity={1}
+        wispSpeed={15}
+        wispIntensity={5}
+        flowSpeed={0.35}
+        flowStrength={0.11}
+        fogIntensity={0.73}
+        fogScale={0.22}
+        fogFallSpeed={1.76}
+        decay={2.6}
+        falloffStart={1.6}
       />
 
       <div
@@ -67,35 +79,25 @@ export default function AutomationHeroSection() {
         ref={revealImgRef}
         src="/assets/images/backgrounds/automationherobg.webp"
         alt="Reveal effect"
-        style={{
-          position: "absolute",
-          width: "100%",
-          top: "-50%",
-          zIndex: 5,
-          mixBlendMode: "lighten",
-          opacity: 0.3,
-          pointerEvents: "none",
-          "--mx": "-9999px",
-          "--my": "-9999px",
-          WebkitMaskImage:
-            "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
-          maskImage:
-            "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
-          WebkitMaskRepeat: "no-repeat",
-          maskRepeat: "no-repeat",
-        }}
-        horizontalSizing={0.7}
-        verticalSizing={20}
-        wispDensity={1}
-        wispSpeed={15}
-        wispIntensity={5}
-        flowSpeed={0.35}
-        flowStrength={0.11}
-        fogIntensity={0.73}
-        fogScale={0.22}
-        fogFallSpeed={1.76}
-        decay={2.6}
-        falloffStart={1.6}
+        style={
+          {
+            position: "absolute",
+            width: "100%",
+            top: "-50%",
+            zIndex: 5,
+            mixBlendMode: "lighten",
+            opacity: 0.3,
+            pointerEvents: "none",
+            "--mx": "-9999px",
+            "--my": "-9999px",
+            WebkitMaskImage:
+              "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
+            maskImage:
+              "radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+          } as CSSProperties
+        }
       />
     </div>
   );
