@@ -1,10 +1,11 @@
-// app/features/career/components/form.tsx
 "use client";
 
 import { useState } from "react";
 import CareerTabs from "./CareerTabs";
 import PersonalForm from "./forms/PersonalForm";
 import ProfessionalForm from "./forms/ProfessionalForm";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function CareerForm({
   mode = "create",
@@ -13,15 +14,61 @@ export default function CareerForm({
 }) {
   const [activeTab, setActiveTab] = useState("personal");
 
+  // 🔹 ONE SINGLE STATE (sab data yahin)
+  const [values, setValues] = useState({
+    // personal
+    first_name: "",
+    last_name: "",
+    dob: "",
+
+    // professional
+    designation: "",
+    department: "",
+    experience_years: "",
+    skills: "",
+  });
+
+  // 🔹 universal handler
+  const handleChange = (name: string, value: any) => {
+    setValues((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // 🔥 ONE API CALL
+  const handleSubmit = async () => {
+    try {
+      console.log("FINAL PAYLOAD:", values);
+
+      // 🔗 yahin API call aayegi
+      // await createCareer(values)
+
+      toast.success("Career saved successfully");
+    } catch (err) {
+      toast.error("Something went wrong");
+    }
+  };
+
   return (
     <div className="space-y-6">
       <CareerTabs active={activeTab} onChange={setActiveTab} />
 
-      {activeTab === "personal" && <PersonalForm />}
-      {activeTab === "professional" && <ProfessionalForm />}
+      {activeTab === "personal" && (
+        <PersonalForm values={values} onChange={handleChange} />
+      )}
+
+      {activeTab === "professional" && (
+        <ProfessionalForm values={values} onChange={handleChange} />
+      )}
+
+      {/* 🔥 SINGLE SUBMIT BUTTON */}
+      <div className="pt-4">
+        <Button onClick={handleSubmit}>
+          {mode === "edit" ? "Update Career" : "Create Career"}
+        </Button>
+      </div>
     </div>
   );
 }
+
 
 
 
