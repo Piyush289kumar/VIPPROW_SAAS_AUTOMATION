@@ -1,7 +1,6 @@
 "use client";
 
 import { useArticleById } from "@/app/features/articles/hook/useArticle";
-import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useParams } from "next/navigation";
