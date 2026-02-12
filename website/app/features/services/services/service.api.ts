@@ -36,6 +36,21 @@ export const fetchPublicServices = async (
   return res.data;
 };
 
+
+// Fetch Service Name List - Public
+export const fetchPublicServicesNames = async (
+  params: ServiceQuery = {},
+): Promise<ServiceResponse> => {
+  const res = await API.get("/service/public/names", {
+    params: {
+      ...params,
+      domains: params.domains?.join(","),
+    },
+  });
+  return res.data;
+};
+
+
 // Fetch Service By ID - Public 
 export const fetchServiceById = async (id: string): Promise<Service> => {
   const res = await API.get(`/service/public/${id}`);
