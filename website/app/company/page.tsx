@@ -19,7 +19,6 @@ export default function CompanyPage() {
       <div className="pt-20 max-w-7xl mx-auto justify-between">
         <CompanyStory />
         <Journey />
-        
       </div>
       {/* Company Story End */}
 
