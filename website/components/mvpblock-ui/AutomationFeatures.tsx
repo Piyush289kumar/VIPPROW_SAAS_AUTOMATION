@@ -14,25 +14,25 @@ import FeaturesPointerSection, { FeatureCard, FeatureItem } from '../custom-ui/F
 const leftFeatures: FeatureItem[] = [
   {
     icon: Building2,
-    title: '111 Performance Focused',
+    title: 'Real-Time Data Insights',
     description:
-      ' Campaigns designed to generate leads, conversions, and measurable ROI. .',
+      ' Get instant performance analytics and actionable business recommendations .',
     position: 'left',
     cornerStyle: 'sm:translate-x-4 sm:rounded-br-[2px]',
   },
   {
     icon: User2,
-    title: 'SEO & Visibility',
+    title: 'Smart CRM Integration',
     description:
-      ' Improve rankings, increase traffic, and stay visible where customers search..',
+      ' Automatically capture, score, and nurture leads across connected systems.',
     position: 'left',
     cornerStyle: 'sm:-translate-x-4 sm:rounded-br-[2px]',
   },
   {
     icon: Trophy,
-    title: ' Optimization',
+    title: ' Intelligent Workflow ',
     description:
-      'Campaigns monitored, tested, and improved for consistent results..',
+      'Automate repetitive tasks, approvals, and processes with smart AI triggers.',
     position: 'left',
     cornerStyle: 'sm:translate-x-4 sm:rounded-tr-[2px]',
   },
@@ -49,17 +49,17 @@ const rightFeatures: FeatureItem[] = [
   },
   {
     icon: User,
-    title: 'Brand Building',
+    title: 'System Architecture',
     description:
-      'Build a strong digital presence that customers recognize and trust..',
+      'Designed to grow with your business without increasing complexity.',
     position: 'right',
     cornerStyle: 'sm:translate-x-4 sm:rounded-bl-[2px]',
   },
   {
     icon: Lightbulb,
-    title: 'CRM Integration',
+    title: 'Tool Integrations',
     description:
-      ' Connect leads, campaigns, and data into one streamlined system.',
+      ' Connect marketing, sales, finance, and productivity tools in one ecosystem..',
     position: 'right',
     cornerStyle: 'sm:-translate-x-4 sm:rounded-tl-[2px]',
   },

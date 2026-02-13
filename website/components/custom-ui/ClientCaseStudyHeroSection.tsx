@@ -41,7 +41,7 @@ export default function ClientCaseStudyHeroSection() {
                     href="#"
                     className="font-heading group border-input inline-flex w-full items-center justify-center rounded-full border-[1px] bg-gradient-to-tr from-zinc-300/5 via-blue-400/20 to-transparent px-10 py-4 text-center text-white transition-colors hover:bg-transparent/80 sm:w-auto"
                   >
-                    Browse courses
+                    Vipprow
                   </a>
                 </div>
               </span>

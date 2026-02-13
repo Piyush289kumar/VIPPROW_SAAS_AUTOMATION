@@ -279,9 +279,9 @@ export default function SaasHeroSection() {
               variants={itemVariants}
               className="font-heading mb-6 bg-gradient-to-r from-white/70 via-white to-blue-500/100 bg-clip-text text-3xl leading-tight text-transparent sm:text-4xl md:text-2xl lg:text-6xl"
             >
-             The Smart SaaS Platform for <br className="hidden sm:inline" />
+             Intelligent SaaS Built  <br className="hidden sm:inline" />
               <span className="bg-gradient-to-r from-blue-600/20/20 via-blue-600/20 to-blue-600/20 bg-clip-text text-transparent">
-                Scalable Business Growth
+               for Modern Workflows
               </span>
             </motion.h1>
 
@@ -357,7 +357,7 @@ export default function SaasHeroSection() {
                 className="rounded-full border-blue-500/30 bg-transparent text-white hover:bg-blue-500/10 hover:text-white"
                 size="lg"
               >
-                View Demo
+                Get in Touch
               </Button>
             </motion.div>
 
@@ -377,8 +377,8 @@ export default function SaasHeroSection() {
                 ))}
               </div>
               <span className="text-xs text-slate-300">
-                <span className="font-semibold text-white">500+</span>{" "}
-                developers already building
+                <span className="font-semibold text-white">99+</span>{" "}
+                Our satisfied Customers
               </span>
               <ArrowUpRight className="h-3 w-3 text-blue-400" />
             </motion.div>

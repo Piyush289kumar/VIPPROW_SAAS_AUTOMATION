@@ -10,7 +10,7 @@ export default function MissionSection() {
         {/* LEFT CONTENT */}
         <div>
           <span className="text-sm uppercase tracking-widest text-neutral-400">
-            OUR VISION
+            About Us
           </span>
 
           <h2 className="mt-4 text-4xl md:text-4xl font-semibold font-heading leading-tighter">
@@ -79,11 +79,9 @@ How We Turn Strategy into Results
 "
             >
               <div>
-                <h4 className="text-md font-semibold font-heading text-white">
-                  Lulu Meyers
-                </h4>
+                
                 <p className="text-sm text-white/70">
-                  PM, Hourglass Web Design Agency
+                 Powered by Data. Driven by Performance.
                 </p>
               </div>
 

@@ -7,7 +7,7 @@ export default function InfoSection() {
     <>
       <div className="bg-transparent">
         <section className="relative py-12 sm:py-16 lg:pb-40">
-          <div className="absolute bottom-0 right-0 overflow-hidden">
+          <div className="absolute bottom-0 right-0 overflow-hidden"> 
             <motion.div
               className="w-full cursor-pointer"
               animate={{
@@ -109,13 +109,14 @@ export default function InfoSection() {
                 </div>
               </div>
 
-              <div className="xl:col-span-1">
-                <img
-                  className="w-full mx-auto"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/illustration.png"
-                  alt=""
-                />
-              </div>
+              <div className="xl:col-span-1 relative min-h-[500px] flex items-center justify-center">
+  <img
+    src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/illustration.png"
+    alt="Illustration"
+    className="absolute right-0 bottom-0 w-[500px] h-auto object-contain"
+  />
+</div>
+
             </div>
           </div>
         </section>

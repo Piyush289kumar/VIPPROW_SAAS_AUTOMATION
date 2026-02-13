@@ -1,107 +1,183 @@
 "use client";
 
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-export default function WhyChooseUs() {
+export default function OurVisionSection() {
   return (
-    <section className="relative w-full bg-black text-white py-20 px-6 md:px-16">
-      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        {/* LEFT CONTENT */}
-        <div>
-          <span className="text-sm uppercase tracking-widest text-neutral-400">
-            OUR VISION
-          </span>
-
-          <h2 className="mt-4 text-4xl md:text-4xl font-semibold font-heading leading-tighter">
-            How We Shape the Future of Business Growth
-          </h2>
-
-          <div className="mt-10 mb-10 space-y-6 text-neutral-400 leading-relaxed font-heading text-sm">
-            <p>
-             At Vipprow, our vision is to redefine digital growth by making it strategic, scalable, and measurable. We aim to empower businesses with performance-led marketing and automation systems that eliminate guesswork and deliver consistent results.
-            </p>
-            <p>
-             
-We believe growth should not depend on trial and error. Instead, it should be driven by data, clarity, and intelligent systems that adapt as businesses evolve. Our vision is to help brands move faster, make smarter decisions, and build a strong digital foundation that supports long-term success
-            </p>
-
-            <p>
-              By combining performance marketing, SEO, and SaaS automation, Vipprow envisions a future where businesses operate efficiently, scale confidently, and stay ahead in a competitive digital landscape.
-            </p>
-          </div>
-
-          <span className="text-sm uppercase tracking-widest text-neutral-400">
-            OUR MISSION
-          </span>
-
-          <h2 className="mt-4 text-4xl md:text-4xl font-semibold font-heading leading-tighter">
-           
-How We Turn Strategy into Results
-          </h2>
-
-          <div className="mt-10 space-y-6 text-neutral-400 leading-relaxed font-heading text-sm">
-            <p>
-             Our mission at Vipprow is to help businesses achieve sustainable digital growth through performance marketing, automation, and technology-driven solutions.
-            </p>
-
-            <p>
-            We are committed to understanding each client’s unique goals and challenges, and transforming them into actionable strategies that drive visibility, leads, and conversions. Through continuous optimization, analytics, and automation, we ensure every effort delivers measurable impact.
-            </p>
+    <section className="relative py-20 px-6 md:px-16 text-white overflow-hidden">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        {/* LEFT IMAGE */}
+        <div className="relative">
+          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/5 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_0_80px_-15px_rgba(139,92,246,0.35)]">
+            <Image
+              src="/assets/images/company/mission.jpeg"
+              alt="Company Vision"
+              width={800}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
-        {/* RIGHT CARD */}
-        <div className="relative">
-          <div className="overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
-            <Image
-              src="/assets/company/About.jpg"
-              alt="Client testimonial"
-              width={800}
-              height={800}
-              className="h-auto w-full object-cover rounded-2xl"
-              priority
+        {/* RIGHT CONTENT */}
+        <div>
+          <span className="text-sm uppercase tracking-widest text-neutral-400 font-heading">
+            {/* Our Vision */}
+          </span>
+
+          <h2 className="mt-4 text-4xl font-semibold leading-tight font-heading">
+            Growth with Purpose, Not Just Progress
+          </h2>
+
+          <p className="mt-6 text-neutral-400 max-w-xl leading-relaxed font-heading text-sm">
+           At Vipprow, we design scalable growth frameworks powered by data, automation, and strategic execution—so businesses can move faster and grow smarter.
+          </p>
+
+          {/* Vision bullets */}
+          <div className="mt-12 space-y-8">
+            <VisionItem
+              title="We Deliver Measurable Results"
+              description="Vipprow focuses on performance, not promises. Every strategy is built to generate leads, conversions, and real ROI."
             />
 
-            {/* OVERLAY */}
+            <VisionItem
+              title="Because We Simplify Complexity"
+              description="We turn complicated marketing and operational processes into simple, automated systems.."
+            />
 
-            {/* GLASS OVERLAY */}
-            <div
-              className="
-  absolute inset-x-0 bottom-0
-  bg-white/10
-  backdrop-blur-xl backdrop-saturate-150
-  border-t border-white/20
-  py-3 px-6
-  flex items-end justify-between
-  rounded-bl-2xl
-  rounded-br-2xl
-"
-            >
-              <div>
-                <h4 className="text-md font-semibold font-heading text-white">
-                  Lulu Meyers
-                </h4>
-                <p className="text-sm text-white/70">
-                  PM, Hourglass Web Design Agency
-                </p>
-              </div>
-
-              <div className="flex items-center gap-1">
-                <p className="text-md text-white font-bold font-heading italic">
-                  - Vipprow
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-white text-white" />
-              ))}
-            </div>
+            <VisionItem
+              title="Because We Focus on Long-Term Growth"
+              description="We don’t chase short-term wins — we build strategies designed for sustainable scales."
+            />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+/* ----------------- SUB COMPONENT ----------------- */
+
+function VisionItem({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
+  return (
+    <div>
+      <h4 className="font-semibold flex items-center gap-2 font-heading">
+        {title}
+        <ArrowUpRight className="h-4 w-4 text-blue-500" />
+      </h4>
+      <p className="mt-2 text-sm text-neutral-400 max-w-md">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+// "use client";
+
+// import { ArrowUpRight } from "lucide-react";
+
+// export default function WhyChooseUs() {
+//   return (
+//     <section className="relative py-20 px-6 md:px-16 text-white overflow-hidden">
+//       {/* Subtle background glow */}
+//       {/* <div className="pointer-events-none absolute -top-32 -left-32 h-[480px] w-[480px] rounded-full bg-violet-600/10 blur-[120px]" /> */}
+
+//       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+//         {/* LEFT CONTENT */}
+//         <div>
+//           {/* Vision bullets */}
+//           <div className="mt-12 space-y-8">
+//             <VisionItem
+//               title="Because We Deliver Measurable Results"
+//               description="Vipprow focuses on performance, not promises. Every strategy is built to generate leads, conversions, and real ROI."
+//             />
+
+//             <VisionItem
+//               title="Because We Focus on Long-Term Growth"
+//               description="We don’t chase short-term wins — we build strategies designed for sustainable scale."
+//             />
+//             <VisionItem
+//               title="
+// Because We Combine Marketing + Automation"
+//               description="Vipprow integrates performance marketing with SaaS automation for smarter execution..."
+//             />
+//             <VisionItem
+//               title="Because We Simplify Complexity"
+//               description="We turn complicated marketing and operational processes into simple, automated systems..."
+//             />
+//             <VisionItem
+//               title="Because Data Drives Our Decisions"
+//               description="No guesswork. Every action is backed by analytics, insights, and measurable performance tracking."
+//             />
+//           </div>
+//         </div>
+
+//         {/* RIGHT GLASS PANEL */}
+//         <div className="relative">
+//           <div
+//             className="
+//             relative rounded-2xl border border-white/15
+//             bg-white/5 backdrop-blur-2xl backdrop-saturate-150
+//             shadow-[0_0_80px_-15px_rgba(139,92,246,0.35)]
+//             overflow-hidden
+//           "
+//           >
+//             {/* RIGHT GLASS PANEL */}
+//             <div className="relative">
+//               <div
+//                 className="
+//       relative overflow-hidden rounded-2xl
+//       border border-white/15
+//       bg-white/5
+//       backdrop-blur-2xl backdrop-saturate-150
+//       shadow-[0_0_80px_-15px_rgba(139,92,246,0.35)]
+//     "
+//               >
+//                 <img
+//                   src="/assets/images/company/mission.jpeg"
+//                   alt="Product preview"
+//                   className="w-full h-full object-cover"
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// /* ----------------- SUB COMPONENTS ----------------- */
+
+// function VisionItem({
+//   title,
+//   description,
+// }: {
+//   title: string;
+//   description: string;
+// }) {
+//   return (
+//     <div>
+//       <h4 className="font-semibold flex items-center gap-2 font-heading">
+//         {title}
+//         <ArrowUpRight className="h-4 w-4 text-blue-500" />
+//       </h4>
+//       <p className="mt-2 text-sm text-neutral-400 max-w-md">{description}</p>
+//     </div>
+//   );
+// }

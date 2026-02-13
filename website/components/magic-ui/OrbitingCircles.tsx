@@ -34,10 +34,10 @@ export function OrbitingCirclesDemo({ className }: { className?: string }) {
       {/* 🟡 MIDDLE ORBIT */}
       <OrbitingCircles iconSize={34} radius={120} reverse speed={1}>
        
-        <Icons.notion />
-        <Icons.linkedin />
-        <Icons.instagram />
         
+        <Icons.linkedin />
+       
+         <Icons.instagramApp />
         
         <Icons.youtube />
       </OrbitingCircles>
@@ -45,9 +45,9 @@ export function OrbitingCirclesDemo({ className }: { className?: string }) {
       {/* 🔵 INNER ORBIT (SMALLEST) */}
       <OrbitingCircles iconSize={26} radius={70} speed={1}>
          <Icons.xTwitter />
-        <Icons.whatsapp />
         
-         {/* <Icons.facebookNew /> */}
+        
+         <Icons.facebookNew />
       </OrbitingCircles>
     </div>
   );
@@ -186,11 +186,64 @@ const Icons = {
     </svg>
   ),
 
-  instagram: () => (
-    <svg width="100" height="100" viewBox="0 0 448 512" fill="currentColor">
-      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.6-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zM398.8 80c-1.7-35.3-9.9-66.6-36.2-92.9C336.3-39.2 305-47.4 269.7-49.1 232.1-51.1 215.9-51.1 178.3-49.1c-35.3 1.7-66.6 9.9-92.9 36.2C59.1- -39.2 50.9-7.9 49.2 27.4 47.2 65 47.2 81.2 49.2 118.8c1.7 35.3 9.9 66.6 36.2 92.9 26.3 26.3 57.6 34.5 92.9 36.2 37.6 2 53.8 2 91.4 0 35.3-1.7 66.6-9.9 92.9-36.2 26.3-26.3 34.5-57.6 36.2-92.9 2-37.6 2-53.8 0-91.4z" />
-    </svg>
-  ),
+instagramApp: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <radialGradient id="igAppGradient" cx="30%" cy="107%" r="150%">
+        <stop offset="0%" stopColor="#fdf497" />
+        <stop offset="5%" stopColor="#fdf497" />
+        <stop offset="45%" stopColor="#fd5949" />
+        <stop offset="60%" stopColor="#d6249f" />
+        <stop offset="90%" stopColor="#285AEB" />
+      </radialGradient>
+    </defs>
+
+    {/* Background */}
+    <rect
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+      rx="6"
+      fill="url(#igAppGradient)"
+    />
+
+    {/* Outer Camera Border */}
+    <rect
+      x="5"
+      y="5"
+      width="14"
+      height="14"
+      rx="4"
+      fill="none"
+      stroke="white"
+      strokeWidth="2"
+    />
+
+    {/* Center Filled Circle */}
+    <circle
+      cx="12"
+      cy="12"
+      r="4"
+      fill="white"
+    />
+
+    {/* Small Top Right Dot */}
+    <circle
+      cx="17"
+      cy="7"
+      r="1.5"
+      fill="white"
+    />
+  </svg>
+),
+
+
 
   pinterest: () => (
     <svg width="100" height="100" viewBox="0 0 384 512" fill="currentColor">
@@ -215,23 +268,24 @@ const Icons = {
     />
   </svg>
 ),
-// facebookNew: () => (
-//   <svg
-//     width="100"
-//     height="100"
-//     viewBox="0 0 24 24"
-//     xmlns="http://www.w3.org/2000/svg"
-//   >
-//     <!-- Blue Circle -->
-//     <circle cx="12" cy="12" r="12" fill="#1877F2" />
+facebookNew: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Blue Circle */}
+    <circle cx="12" cy="12" r="12" fill="#1877F2" />
 
-//     <!-- White "f" -->
-//     <path
-//       fill="#FFFFFF"
-//       d="M15.117 8.667h-1.9c-.298 0-.617.39-.617.915v1.37h2.517l-.38 2.32h-2.137V20h-2.626v-6.728H8.5v-2.32h1.474V9.795c0-1.46 1.005-2.795 2.657-2.795h2.486v1.667z"
-//     />
-//   </svg>
-// ),
+    {/* White "f" */}
+    <path
+      fill="#FFFFFF"
+      d="M15.117 8.667h-1.9c-.298 0-.617.39-.617.915v1.37h2.517l-.38 2.32h-2.137V20h-2.626v-6.728H8.5v-2.32h1.474V9.795c0-1.46 1.005-2.795 2.657-2.795h2.486v1.667z"
+    />
+  </svg>
+),
+
 
 xTwitter: () => (
   <svg

@@ -75,7 +75,7 @@ export default function FeaturesPointerSection({heading, description, leftFeatur
             {heading}
             </h2>
             <p className="font-heading text-muted-foreground mx-auto max-w-[18rem] text-center text-pretty">
-             {/* We help brands scale faster through intelligent campaigns powered by data and insights */}
+             We help brands scale faster through intelligent campaigns powered by data and insights
              {description}
             </p>
           </div>

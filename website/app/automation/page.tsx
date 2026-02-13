@@ -19,8 +19,8 @@ export default function AutomationPage() {
       {/* Automation Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Simplify Work.Accelerate Success"
+          des="Vipprow Business Automation solutions are designed to simplify complex workflows and remove repetitive manual tasks.."
         />
         <AutomationFeatures />
       </div>
@@ -29,8 +29,8 @@ export default function AutomationPage() {
        {/* AutomationBentoGridSection Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Where Automation Meets Intelligence"
+          des="Transform daily operations with AI-powered workflows, integrations, and actionable analytics."
         />
         <AutomationBentoGridSection />
       </div>

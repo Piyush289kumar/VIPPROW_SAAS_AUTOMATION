@@ -20,7 +20,7 @@ serviceType="digital-marketing"
 
       <AnimatedSVGCard
         href="/automation"
-        title="Business Automation"
+        title="Business Automation (A.I)"
         description="Intelligent automation systems that simplify workflows, reduce manual effort, and accelerate business performance."
          serviceType="business-automation"
       />

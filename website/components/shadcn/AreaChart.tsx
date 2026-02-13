@@ -23,18 +23,18 @@ export const description = "A simple area chart";
 
 const chartData = [
     
-  { month: "A", desktop: 90 },
-  { month: "B", desktop: 120 },
-  { month: "C", desktop: 100 },
-  { month: "C", desktop: 90 },
-  { month: "April", desktop: 130 },
-  { month: "May", desktop: 180 },
-  { month: "June", desktop: 250 },
+  { month: "A", client: 15 },
+  { month: "B", desktop: 20 },
+  { month: "C", desktop: 30 },
+  { month: "C", desktop: 50 },
+  { month: "April", desktop: 55 },
+  { month: "May", desktop: 70 },
+  { month: "June", desktop: 85 },
 ];
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "Client",
     color: "var(--chart-1)",
   },
 } satisfies ChartConfig;

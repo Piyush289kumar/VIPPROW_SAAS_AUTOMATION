@@ -14,7 +14,7 @@ import { BorderBeam } from '@/components/ui/border-beam';
 const data = [
   {
     id: '1',
-    question: 'Business Growth with Vipprow?',
+    question: 'How does Vipprow help improve brand credibility online??',
     answer:
       'Automates work, boosts sales, improves efficiency, and helps you scale faster with smart tools',
   },

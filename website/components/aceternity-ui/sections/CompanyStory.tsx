@@ -6,7 +6,7 @@ import { SparklesHeading } from "../SparklesHeading";
 export default function CompanyStory() {
   return (
     <section>
-      <SparklesHeading />
+      {/* <SparklesHeading /> */}
 
       <PrimaryHeading
         heading="The Vision Behind Our Journey"

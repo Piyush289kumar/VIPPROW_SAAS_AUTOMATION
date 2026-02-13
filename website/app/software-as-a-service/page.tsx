@@ -22,8 +22,8 @@ export default function SoftwareAsAServicePage() {
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Scale Smarter with SaaS Solutions"
+          des="Empower your business with secure, cloud-based software designed to streamline operations and boost productivity.."
         />
         <SaasFeatureSteps />
       </div>

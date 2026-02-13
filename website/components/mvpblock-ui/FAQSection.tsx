@@ -16,51 +16,51 @@ import PrimaryHeading from "../ui/heading/PrimaryHeading";
 const data = [
   {
     id: "1",
-    question: "Is Vipprow worth the investment?",
+    question: "How does Vipprow help improve brand credibility online?",
     answer:
-      " Yes. Most clients recover the cost through time saved and higher sales efficiency..",
+      " Through SEO, ORM, content marketing, and review management, we help build a trustworthy and authoritative digital presence.",
   },
   {
     id: "2",
-    question: "Are there hidden charges later?",
+    question: "How can Vipprow help with SEO optimization?",
     answer:
-      "No. Pricing is transparent with no surprise fees.",
+      "We create structured digital strategies using ads, SEO, content, and automation to build visibility, trust, and consistent lead generation.",
   },
   {
     id: "3",
-    question: "Is the demo really free?",
+    question: "Does Vipprow provide performance marketing services ?",
     answer:
-      " Yes. The demo is 100% free with no commitment required..",
+      " Yes, we run ROI-focused Meta and Google Ads campaigns designed to generate quality leads, sales, and measurable results..",
   },
   {
     id: "4",
-    question: "Can I see case studies or results?",
+    question: "How does Vipprow improve local business visibility?",
     answer:
-      " Yes. We share real examples of client success.",
+      " We optimize your Google Business Profile, manage reviews, and improve local search rankings so nearby customers can easily find your business..",
   },
   {
     id: "5",
-    question: "Do you offer enterprise-level security?",
+    question: "Can Vipprow build my business website?",
     answer:
-      " Yes. Advanced protection meets modern compliance standards.",
+      " Yes, we design and develop conversion-focused websites and e-commerce platforms that are fast, responsive, and optimized for growth.",
   },
   {
     id: "6",
-    question: "Can we start small and expand later?",
+    question: " How does Vipprow ensure better ROAS in ad campaigns?",
     answer:
-      " Absolutely. The platform grows with your startup.",
+      " We use data-driven targeting, creative testing, and continuous optimization to maximize ad performance and improve return on ad spend..",
   },
   {
     id: "7",
-    question: "What makes Vipprow scalable?",
+    question: "How can Vipprow help grow my brand online?",
     answer:
-      " Our SaaS ecosystem supports rapid multi-industry expansion..",
+      " We create structured digital strategies using ads, SEO, content, and automation to build visibility, trust, and consistent lead generation..",
   },
   {
     id: "8",
-    question: "Can I upgrade or downgrade my plan anytime?",
+    question: "Does Vipprow offer SaaS automation solutions?",
     answer:
-      "Yes, you can change your subscription plan at any time from your account settings. Your billing will be adjusted automatically.",
+      "Yes, we implement automation systems for lead management, CRM integration, and workflow optimization to improve efficiency and scalability..",
   },
  
 ];
