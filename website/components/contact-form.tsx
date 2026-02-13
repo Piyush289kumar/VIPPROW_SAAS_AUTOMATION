@@ -20,12 +20,35 @@ import { Input } from "@/components/ui/input";
 import React, { useState } from "react";
 import { useSubmitContactForm } from "@/app/features/contact/hook/useContact";
 import toast from "react-hot-toast";
+import { usePublicServicesNames } from "@/app/features/services/hook/useService";
+
+import {
+  Combobox,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxChipsInput,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxValue,
+  useComboboxAnchor,
+} from "@/components/ui/combobox";
+import { ChevronsUpDown } from "lucide-react";
+import { Service } from "@/types/service";
 
 export function ContactForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
   const submitMutation = useSubmitContactForm();
+
+  const { data, isLoading, error } = usePublicServicesNames();
+  const services_names = data?.data ?? [];
+  const [selectedServices, setSelectedServices] = useState<Service[]>([]);
+
+  const anchor = useComboboxAnchor();
+
   const [form, setForm] = useState({
     type: "General",
     name: "",
@@ -48,10 +71,24 @@ export function ContactForm({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    submitMutation.mutate(form, {
+    // Optional validation (recommended)
+    if (selectedServices.length === 0) {
+      toast.error("Please select at least one service.");
+      return;
+    }
+
+    // Prepare final payload
+    const payload = {
+      ...form,
+      services: selectedServices.map((service) => service._id), // send only ids
+    };
+
+    submitMutation.mutate(payload, {
       onSuccess: () => {
         console.log("Form submitted successfully.");
         toast.success("Form submitted successfully.");
+
+        // Reset form fields
         setForm({
           type: "General",
           name: "",
@@ -61,14 +98,18 @@ export function ContactForm({
           message: "",
           subject: "",
         });
+
+        // Reset selected services
+        setSelectedServices([]); // this will now clear dropdown
       },
+
       onError: (err: unknown) => {
         const errorMessage =
           (err as { response?: { data?: { message?: string } } })?.response
             ?.data?.message || "Something went wrong. Try again";
 
         toast.error(errorMessage);
-        console.log(errorMessage);
+        console.log("Submission error:", errorMessage);
       },
     });
   };
@@ -94,7 +135,7 @@ export function ContactForm({
                 <Input
                   id="name"
                   type="text"
-                  placeholder="full name"
+                  placeholder="Full Name"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
@@ -103,9 +144,9 @@ export function ContactForm({
               </Field>
 
               <Field>
-                <FieldLabel htmlFor="fullname">Phone</FieldLabel>
+                <FieldLabel htmlFor="phone">Phone</FieldLabel>
                 <Input
-                  id="fullname"
+                  id="phone"
                   type="text"
                   placeholder="1234567890"
                   min={10}
@@ -163,6 +204,59 @@ export function ContactForm({
                   required
                 />
               </Field>
+
+              <div className="space-y-2 w-full">
+                {/* Label */}
+                <FieldLabel htmlFor="message">Select Sevices</FieldLabel>
+
+                <Combobox<Service, true>
+                  key={selectedServices.length} // 👈 forces re-render when cleared
+                  multiple
+                  autoHighlight
+                  items={services_names}
+                  value={selectedServices}
+                  onValueChange={(values) =>
+                    setSelectedServices(values as Service[])
+                  }
+                >
+                  <div className="relative">
+                    <ComboboxChips ref={anchor} className="w-full pr-10">
+                      <ComboboxValue>
+                        {(values: Service[]) => (
+                          <>
+                            {values.length === 0 && (
+                              <span className="text-muted-foreground">
+                                Select Services...
+                              </span>
+                            )}
+
+                            {values.map((item) => (
+                              <ComboboxChip key={item._id}>
+                                {item.title}
+                              </ComboboxChip>
+                            ))}
+
+                            <ComboboxChipsInput />
+                          </>
+                        )}
+                      </ComboboxValue>
+                    </ComboboxChips>
+
+                    <ChevronsUpDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                  </div>
+
+                  <ComboboxContent anchor={anchor}>
+                    <ComboboxEmpty>No services found.</ComboboxEmpty>
+                    <ComboboxList>
+                      {(item: Service) => (
+                        <ComboboxItem key={item._id} value={item}>
+                          {item.title}
+                        </ComboboxItem>
+                      )}
+                    </ComboboxList>
+                  </ComboboxContent>
+                </Combobox>
+              </div>
 
               <Field>
                 <FieldLabel htmlFor="message">Message</FieldLabel>

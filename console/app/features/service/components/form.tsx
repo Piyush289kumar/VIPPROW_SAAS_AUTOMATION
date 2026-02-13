@@ -12,6 +12,18 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+
+
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
+} from "@/components/ui/combobox"
+
+
 import { ImageIcon, UploadIcon, XIcon, Loader2 } from "lucide-react";
 import { useFileUpload } from "@/hooks/use-file-upload";
 import { toast } from "sonner";
@@ -20,8 +32,11 @@ import {
   useCreateServiceMutation,
   useUpdateServiceMutation,
   useGetServiceByIdQuery,
+  useGetPublicServiceNamesQuery,
 } from "../data/serviceApi";
 import { RichTextEditor } from "~/components/crud/RichTextEditor";
+import { useGetDomainsQuery } from "~/features/domains/data/domainsApi";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 
 /* ---------------- VALIDATION ---------------- */
 const validate = (values: any, domainId: string) => {
@@ -50,6 +65,7 @@ export default function ServiceForm({ mode = "create" }) {
   /* ---------------- STATE ---------------- */
   const [values, setValues] = useState({
     title: "",
+    domain: "",
     subHeading: "",
     description: "",
     thumbnail: null as string | null,
@@ -95,6 +111,7 @@ export default function ServiceForm({ mode = "create" }) {
       const s = serviceData.data;
       setValues({
         title: s.title || "",
+        domain: s.domain?._id || s.domain || "",
         subHeading: s.subHeading || "",
         description: s.description || "",
         thumbnail: s.thumbnail || null,

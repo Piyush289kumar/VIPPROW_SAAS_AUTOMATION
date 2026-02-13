@@ -31,7 +31,7 @@ import certificateRoutes from "./routes/certificate.routes.js";
 import certificateDownloadRoutes from "./routes/userCertificate.routes.js";
 import testimonialRoutes from "./routes/testimonials.routes.js";
 import serviceRoutes from "./routes/service.routes.js";
-import domainsRoutes from './routes/domain.routes.js'
+import domainsRoutes from "./routes/domain.routes.js";
 import policyRoutes from "./routes/policy.routes.js";
 import contatUsRoutes from "./routes/contactus.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
@@ -57,22 +57,43 @@ const allowedOrigins = [
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (!origin) return callback(null, true); // SSR, Postman, mobile apps
+
+//       if (allowedOrigins.includes(origin)) {
+//         return callback(null, true);
+//       }
+
+//       console.log("❌ Blocked by CORS:", origin);
+//       return callback(new Error("CORS Not Allowed: " + origin));
+//     },
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   })
+// );
+
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // SSR, Postman, mobile apps
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+
+      // Allow all sslip.io subdomains for staging
+      if (origin.includes("3.108.8.159.sslip.io")) {
+        return callback(null, true);
+      }
 
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
       console.log("❌ Blocked by CORS:", origin);
-      return callback(new Error("CORS Not Allowed: " + origin));
+      callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
+  }),
 );
 
 app.use(helmet({ crossOriginResourcePolicy: false }));
@@ -109,7 +130,7 @@ app.use(
       sameSite: "lax",
       maxAge: 1000 * 60 * 60, // 1 hour
     },
-  })
+  }),
 );
 
 app.use(passport.initialize());
