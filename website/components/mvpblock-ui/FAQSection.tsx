@@ -16,45 +16,45 @@ import PrimaryHeading from "../ui/heading/PrimaryHeading";
 const data = [
   {
     id: "1",
-    question: "How can I start using your amazing service?",
+    question: "Is Vipprow worth the investment?",
     answer:
-      "Getting started is easy! Simply sign up for an account, complete your profile, and you can begin using our services immediately. No credit card required for the first 14 days.",
+      " Yes. Most clients recover the cost through time saved and higher sales efficiency..",
   },
   {
     id: "2",
-    question: "Which payment methods are supported on your platform?",
+    question: "Are there hidden charges later?",
     answer:
-      "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are securely processed through encrypted channels.",
+      "No. Pricing is transparent with no surprise fees.",
   },
   {
     id: "3",
-    question: "Can I cancel my subscription anytime I want?",
+    question: "Is the demo really free?",
     answer:
-      "Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees, and you will continue to have access until the end of your billing period.",
+      " Yes. The demo is 100% free with no commitment required..",
   },
   {
     id: "4",
-    question: "Do you provide enterprise custom solutions for businesses?",
+    question: "Can I see case studies or results?",
     answer:
-      "Absolutely! We provide custom enterprise solutions with dedicated support, advanced features, and personalized onboarding. Contact our sales team to discuss your specific requirements.",
+      " Yes. We share real examples of client success.",
   },
   {
     id: "5",
-    question: "How secure is user data on your platform?",
+    question: "Do you offer enterprise-level security?",
     answer:
-      "We take security seriously. Our platform uses bank-level encryption, regular security audits, and complies with industry standards. Your data is stored in secure SOC 2 certified data centers.",
+      " Yes. Advanced protection meets modern compliance standards.",
   },
   {
     id: "6",
-    question: "Is a completely free trial currently available now?",
+    question: "Can we start small and expand later?",
     answer:
-      "Yes! We offer a 14-day free trial with full access to all features. No credit card is required to sign up for the trial.",
+      " Absolutely. The platform grows with your startup.",
   },
   {
     id: "7",
-    question: "Do you provide customer support for all users?",
+    question: "What makes Vipprow scalable?",
     answer:
-      "Absolutely! Our dedicated support team is available 24/7 via chat and email to help you resolve any issues.",
+      " Our SaaS ecosystem supports rapid multi-industry expansion..",
   },
   {
     id: "8",
@@ -62,30 +62,7 @@ const data = [
     answer:
       "Yes, you can change your subscription plan at any time from your account settings. Your billing will be adjusted automatically.",
   },
-  {
-    id: "9",
-    question: "Do you integrate with any popular third-party tools?",
-    answer:
-      "We integrate with popular platforms like Slack, Google Workspace, and Zapier to streamline your workflow.",
-  },
-  {
-    id: "10",
-    question: "What happens after the free trial period ends?",
-    answer:
-      "When your trial ends, you can choose a subscription plan to continue using the service. Your data will remain saved for 30 days.",
-  },
-  {
-    id: "11",
-    question: "Do you offer refunds for unsatisfied subscribed users?",
-    answer:
-      "Yes, we offer a 7-day money-back guarantee if you're not satisfied with the service. Please contact support for assistance.",
-  },
-  {
-    id: "12",
-    question: "Is my information shared with any third parties?",
-    answer:
-      "No, we do not share or sell your personal information. Your privacy and data security are our top priorities.",
-  },
+ 
 ];
 
 export default function FaqSection() {

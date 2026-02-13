@@ -22,11 +22,13 @@ export default [
       ...createCrudRoutes("course"),
       ...createCrudRoutes("category"),
       ...createCrudRoutes("service"),
+      ...createCrudRoutes("career"),
       ...createCrudRoutes("policy"),
       ...createCrudRoutes("testimonial"),
       ...createCrudRoutes("certificate"),
       ...createCrudRoutes("user-certificate"),
       ...createCrudRoutes("gallery"),
+       ...createCrudRoutes("support"),
       ...createCrudRoutes("contact"),
       ...createCrudRoutes("domains"),
 
