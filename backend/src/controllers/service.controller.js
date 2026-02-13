@@ -4,6 +4,7 @@ import {
   destroyFromCloudinary,
   uploadToCloudinary,
 } from "../utils/cloudinaryService.js";
+import mongoose from "mongoose";
 
 /* ============================
    🟢 PUBLIC CONTROLLERS
@@ -116,6 +117,7 @@ export const getAllActiveServices = async (req, res) => {
 /**
  * 🟢 Get Service by ID
  */
+
 export const getServiceById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -135,6 +137,29 @@ export const getServiceById = async (req, res) => {
   }
 };
 
+// Get All Active Services Names
+
+export const getAllActiveServicesName = async (req, res) => {
+  try {
+    const services_names = await Service.find({ isActive: true })
+      .select("title")
+      .lean();
+
+    if (services_names.length === 0) {
+      return res.status(404).json({ message: "Services not found." });
+    }
+
+    res.status(200).json({
+      message: "Services Names fetched successfully.",
+      data: services_names,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message ?? "Internal Error",
+      error: error.message,
+    });
+  }
+};
 
 /* ============================
    🔒 ADMIN — GET ALL Services (with filters)
@@ -195,7 +220,10 @@ export const getAllServices = async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, message: err.message ?? "Internal Server Error" });
+    res.status(500).json({
+      success: false,
+      message: err.message ?? "Internal Server Error",
+    });
   }
 };
 
@@ -206,17 +234,37 @@ export const createService = async (req, res) => {
   try {
     const { title, domain, subHeading, description, isActive } = req.body;
 
-    if (!title || !description)
-      return res
-        .status(400)
-        .json({ message: "Title and description are required." });
+    if (!title || !description || !domain) {
+      return res.status(400).json({
+        message: "Title, description and domain are required.",
+      });
+    }
 
-    // Prevent duplicate titles
-    const existing = await Service.findOne({ title });
-    if (existing)
-      return res.status(400).json({ message: "Service title already exists." });
+    // Validate Domain ObjectId
+    if (!mongoose.Types.ObjectId.isValid(domain)) {
+      return res.status(400).json({
+        message: "Invalid domain ID.",
+      });
+    }
+
+    // Check if Domain exists
+    const domainExists = await Domain.findById(domain);
+    if (!domainExists) {
+      return res.status(404).json({
+        message: "Selected domain not found.",
+      });
+    }
+
+    // Prevent duplicate title inside same domain (better approach)
+    const existing = await Service.findOne({ title, domain });
+    if (existing) {
+      return res.status(400).json({
+        message: "Service title already exists in this domain.",
+      });
+    }
 
     let thumbnailUrl = null;
+
     if (req.files?.thumbnail?.[0]?.path) {
       const uploadThumb = await uploadToCloudinary(
         req.files.thumbnail[0].path,
@@ -227,7 +275,7 @@ export const createService = async (req, res) => {
 
     const service = await Service.create({
       title,
-      domain: domain || null,
+      domain,
       subHeading,
       description,
       thumbnail: thumbnailUrl,
@@ -240,7 +288,7 @@ export const createService = async (req, res) => {
       data: service,
     });
   } catch (error) {
-    console.error("Error while creating service:", error.message);
+    console.error("Error creating service:", error.message);
     res.status(500).json({ message: "Internal Error", error: error.message });
   }
 };
@@ -279,7 +327,18 @@ export const updateService = async (req, res) => {
 
     // Update fields
     service.title = title ?? service.title;
-    service.domain = domain ?? service.domain;
+    if (domain !== undefined) {
+      if (!mongoose.Types.ObjectId.isValid(domain)) {
+        return res.status(400).json({ message: "Invalid domain ID." });
+      }
+
+      const domainExists = await Domain.findById(domain);
+      if (!domainExists) {
+        return res.status(404).json({ message: "Domain not found." });
+      }
+
+      service.domain = domain;
+    }
     service.subHeading = subHeading ?? service.subHeading;
     service.description = description ?? service.description;
     service.isActive = isActive ?? service.isActive;
@@ -312,6 +371,16 @@ export const partiallyUpdateService = async (req, res) => {
     for (const [key, value] of Object.entries(updates)) {
       if (key !== "_id" && value !== undefined) {
         service[key] = value;
+      }
+    }
+    if (updates.domain !== undefined) {
+      if (!mongoose.Types.ObjectId.isValid(updates.domain)) {
+        return res.status(400).json({ message: "Invalid domain ID." });
+      }
+
+      const domainExists = await Domain.findById(updates.domain);
+      if (!domainExists) {
+        return res.status(404).json({ message: "Domain not found." });
       }
     }
 
