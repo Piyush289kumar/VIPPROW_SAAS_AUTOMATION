@@ -22,7 +22,6 @@ export default function CompanyPage() {
       </div>
       {/* Company Story End */}
 
-    
       {/* Mission Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
