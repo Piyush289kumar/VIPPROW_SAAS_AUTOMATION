@@ -21,11 +21,11 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
+edee
 
 
 
-  
-   
+
 
         {/* RIGHT CONTENT */}
         <div>
