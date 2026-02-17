@@ -1,39 +1,34 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
+
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+
 import { cn } from "@/lib/utils";
 
 export const description = "A simple area chart";
 
 const chartData = [
-    
-  { month: "A", client: 15 },
-  { month: "B", desktop: 20 },
-  { month: "C", desktop: 30 },
-  { month: "C", desktop: 50 },
-  { month: "April", desktop: 55 },
-  { month: "May", desktop: 70 },
-  { month: "June", desktop: 85 },
+  { month: "Jan", client: 15 },
+  { month: "Feb", client: 20 },
+  { month: "Mar", client: 30 },
+  { month: "Apr", client: 55 },
+  { month: "May", client: 70 },
+  { month: "Jun", client: 85 },
 ];
 
 const chartConfig = {
-  desktop: {
+  client: {
     label: "Client",
     color: "var(--chart-1)",
   },
@@ -47,28 +42,33 @@ export function AreaChartSection({ className }: { className?: string }) {
         className
       )}
     >
-      <Card>
-        <CardContent>
+      <Card className="h-full border-none bg-transparent">
+        <CardContent className="p-0">
           <ChartContainer config={chartConfig}>
             <AreaChart
               accessibilityLayer
               data={chartData}
-              margin={{
-                left: 0,
-                right: 0,
-              }}
+              margin={{ left: 0, right: 0 }}
             >
               <CartesianGrid vertical={true} />
+
+              <XAxis
+                dataKey="month"
+                hide
+                padding={{ left: 0, right: 0 }}
+              />
+
               <ChartTooltip
                 cursor={false}
                 content={<ChartTooltipContent indicator="line" />}
               />
+
               <Area
-                dataKey="desktop"
+                dataKey="client"
                 type="linear"
-                fill="var(--color-desktop)"
+                fill="var(--color-client)"
                 fillOpacity={0.4}
-                stroke="var(--color-desktop)"
+                stroke="var(--color-client)"
               />
             </AreaChart>
           </ChartContainer>
@@ -77,3 +77,4 @@ export function AreaChartSection({ className }: { className?: string }) {
     </div>
   );
 }
+

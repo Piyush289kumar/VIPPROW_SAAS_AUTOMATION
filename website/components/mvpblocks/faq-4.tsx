@@ -94,7 +94,7 @@ export default function Faq4() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-center py-5">
-      <div className="container m-auto flex min-h-screen w-full flex-col items-center justify-center p-3 lg:p-5">
+      <div className="container m-auto flex  w-full flex-col items-center justify-center p-3 lg:p-5">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -118,7 +118,7 @@ export default function Faq4() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-10 w-full border-b pb-10"
+          className="mb-6 w-full border-b pb-6"
         >
           <Accordion
             type="multiple"

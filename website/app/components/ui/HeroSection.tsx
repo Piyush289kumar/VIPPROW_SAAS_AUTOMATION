@@ -20,7 +20,7 @@ export default function HeroSection() {
               <strong className="text-zinc-800 dark:text-zinc-200">
                 99+
               </strong>{" "}
-              other loving customers
+              other loving clients
             </span>
           </div>
 

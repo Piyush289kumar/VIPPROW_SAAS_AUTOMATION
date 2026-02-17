@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-export default function OurVisionSection() {
+export default function WhyChooseUs() {
   return (
-    <section className="relative py-20 px-6 md:px-16 text-white overflow-hidden">
+    <section className="relative py-10 px-6 md:px-16 text-white overflow-hidden">
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* LEFT IMAGE */}

@@ -6,8 +6,8 @@ import SecondaryButton from "../ui/buttons/SecondaryButton";
 
 export default function CTA() {
   return (
-    <section className="w-full px-6 py-20">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[#050816] px-6 py-24 md:px-12">
+    <section className="w-full px-6 py-0">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/10 bg-[#050816] px-6 py-16 md:px-12">
 
         {/* 🔥 Axioma Style Diagonal Glow */}
         <div className="absolute inset-0">

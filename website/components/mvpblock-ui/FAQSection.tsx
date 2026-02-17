@@ -96,7 +96,7 @@ export default function FaqSection() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-center py-5">
-      <div className="container m-auto flex min-h-screen w-full flex-col items-center justify-center p-3 lg:p-5">
+      <div className="container m-auto flex w-full flex-col items-center justify-center p-3 lg:p-5">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -206,7 +206,7 @@ export default function FaqSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="from-blue-600/30 via-blue-600/10 to-blue-600/5 border-blue-600/30 group relative m-auto mt-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-xl border bg-gradient-to-tl px-8 py-12 text-center shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.15)] transition-all duration-500 hover:shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.2)]"
+          className="from-blue-600/30 via-blue-600/10 to-blue-600/5 border-blue-600/30 group relative m-auto mt-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-xl border bg-gradient-to-tl px-8 py-12 text-center shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.15)] transition-all duration-500 hover:shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.2)] mt-20"
         >
           <BorderBeam
             duration={12}

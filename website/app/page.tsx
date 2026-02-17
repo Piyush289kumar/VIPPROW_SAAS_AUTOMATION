@@ -34,7 +34,7 @@ export default function Home() {
         {/* Bento Grid Start */}
         <div className="pt-20">
           <PrimaryHeading
-            heading="Let Automation Do the Work. You Drive Growth."
+            heading="Let    Automation  Do the  Work. You Drive Growth."
             des="Simplify operations, improve productivity, and accelerate business growth effortlessly.."
           />
           <ClientBentoGridSection />

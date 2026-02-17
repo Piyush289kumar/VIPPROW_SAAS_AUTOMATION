@@ -6,7 +6,7 @@ import { Star } from "lucide-react";
 export default function MissionSection() {
   return (
     <section className="relative w-full bg-black text-white py-20 px-6 md:px-16">
-      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center md:text-justify">
         {/* LEFT CONTENT */}
         <div>
           <span className="text-sm uppercase tracking-widest text-neutral-400">
