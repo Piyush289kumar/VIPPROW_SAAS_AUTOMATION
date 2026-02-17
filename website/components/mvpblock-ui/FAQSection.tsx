@@ -16,76 +16,53 @@ import PrimaryHeading from "../ui/heading/PrimaryHeading";
 const data = [
   {
     id: "1",
-    question: "How can I start using your amazing service?",
+    question: "How does Vipprow help improve brand credibility online?",
     answer:
-      "Getting started is easy! Simply sign up for an account, complete your profile, and you can begin using our services immediately. No credit card required for the first 14 days.",
+      " Through SEO, ORM, content marketing, and review management, we help build a trustworthy and authoritative digital presence.",
   },
   {
     id: "2",
-    question: "Which payment methods are supported on your platform?",
+    question: "How can Vipprow help with SEO optimization?",
     answer:
-      "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are securely processed through encrypted channels.",
+      "We create structured digital strategies using ads, SEO, content, and automation to build visibility, trust, and consistent lead generation.",
   },
   {
     id: "3",
-    question: "Can I cancel my subscription anytime I want?",
+    question: "Does Vipprow provide performance marketing services ?",
     answer:
-      "Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees, and you will continue to have access until the end of your billing period.",
+      " Yes, we run ROI-focused Meta and Google Ads campaigns designed to generate quality leads, sales, and measurable results..",
   },
   {
     id: "4",
-    question: "Do you provide enterprise custom solutions for businesses?",
+    question: "How does Vipprow improve local business visibility?",
     answer:
-      "Absolutely! We provide custom enterprise solutions with dedicated support, advanced features, and personalized onboarding. Contact our sales team to discuss your specific requirements.",
+      " We optimize your Google Business Profile, manage reviews, and improve local search rankings so nearby customers can easily find your business..",
   },
   {
     id: "5",
-    question: "How secure is user data on your platform?",
+    question: "Can Vipprow build my business website?",
     answer:
-      "We take security seriously. Our platform uses bank-level encryption, regular security audits, and complies with industry standards. Your data is stored in secure SOC 2 certified data centers.",
+      " Yes, we design and develop conversion-focused websites and e-commerce platforms that are fast, responsive, and optimized for growth.",
   },
   {
     id: "6",
-    question: "Is a completely free trial currently available now?",
+    question: " How does Vipprow ensure better ROAS in ad campaigns?",
     answer:
-      "Yes! We offer a 14-day free trial with full access to all features. No credit card is required to sign up for the trial.",
+      " We use data-driven targeting, creative testing, and continuous optimization to maximize ad performance and improve return on ad spend..",
   },
   {
     id: "7",
-    question: "Do you provide customer support for all users?",
+    question: "How can Vipprow help grow my brand online?",
     answer:
-      "Absolutely! Our dedicated support team is available 24/7 via chat and email to help you resolve any issues.",
+      " We create structured digital strategies using ads, SEO, content, and automation to build visibility, trust, and consistent lead generation..",
   },
   {
     id: "8",
-    question: "Can I upgrade or downgrade my plan anytime?",
+    question: "Does Vipprow offer SaaS automation solutions?",
     answer:
-      "Yes, you can change your subscription plan at any time from your account settings. Your billing will be adjusted automatically.",
+      "Yes, we implement automation systems for lead management, CRM integration, and workflow optimization to improve efficiency and scalability..",
   },
-  {
-    id: "9",
-    question: "Do you integrate with any popular third-party tools?",
-    answer:
-      "We integrate with popular platforms like Slack, Google Workspace, and Zapier to streamline your workflow.",
-  },
-  {
-    id: "10",
-    question: "What happens after the free trial period ends?",
-    answer:
-      "When your trial ends, you can choose a subscription plan to continue using the service. Your data will remain saved for 30 days.",
-  },
-  {
-    id: "11",
-    question: "Do you offer refunds for unsatisfied subscribed users?",
-    answer:
-      "Yes, we offer a 7-day money-back guarantee if you're not satisfied with the service. Please contact support for assistance.",
-  },
-  {
-    id: "12",
-    question: "Is my information shared with any third parties?",
-    answer:
-      "No, we do not share or sell your personal information. Your privacy and data security are our top priorities.",
-  },
+ 
 ];
 
 export default function FaqSection() {
@@ -119,7 +96,7 @@ export default function FaqSection() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-center py-5">
-      <div className="container m-auto flex min-h-screen w-full flex-col items-center justify-center p-3 lg:p-5">
+      <div className="container m-auto flex w-full flex-col items-center justify-center p-3 lg:p-5">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -229,7 +206,7 @@ export default function FaqSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="from-blue-600/30 via-blue-600/10 to-blue-600/5 border-blue-600/30 group relative m-auto mt-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-xl border bg-gradient-to-tl px-8 py-12 text-center shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.15)] transition-all duration-500 hover:shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.2)]"
+          className="from-blue-600/30 via-blue-600/10 to-blue-600/5 border-blue-600/30 group relative m-auto mt-10 flex w-full flex-col items-center justify-center overflow-hidden rounded-xl border bg-gradient-to-tl px-8 py-12 text-center shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.15)] transition-all duration-500 hover:shadow-[0_0_45px_10px_hsl(var(--blue-600)/0.2)] mt-20"
         >
           <BorderBeam
             duration={12}

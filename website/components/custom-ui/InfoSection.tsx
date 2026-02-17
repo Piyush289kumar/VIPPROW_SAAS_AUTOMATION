@@ -7,7 +7,7 @@ export default function InfoSection() {
     <>
       <div className="bg-transparent">
         <section className="relative py-12 sm:py-16 lg:pb-40">
-          <div className="absolute bottom-0 right-0 overflow-hidden">
+          <div className="absolute bottom-0 right-0 overflow-hidden"> 
             <motion.div
               className="w-full cursor-pointer"
               animate={{
@@ -33,11 +33,10 @@ export default function InfoSection() {
                 <h1
                   className=" text-3xl font-semibold leading-tighter text-zinc-900 dark:text-white sm:text-4xl md:text-5xl font-heading"
                 >
-                  An editor that helps you write clean codes.
+                  A smarter way to market and scale your business..
                 </h1>
                 <p className="mt-2 text-lg text-gray-200 sm:mt-6 font-inter">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vehicula massa in enim luctus. Rutrum arcu.
+                  Data-backed digital strategies that drive visibility, leads, and long-term growth—without guesswork..
                 </p>
 
                 <div className="mt-10 flex flex-row gap-4">
@@ -90,12 +89,10 @@ export default function InfoSection() {
 
                   <blockquote className="mt-6">
                     <p className="font-heading text-md font-bold text-gray-100 font-pj">
-                      Best code editor in market!
+                       A reliable partner for performance-driven marketing.
                     </p>
                     <p className="font-heading mt-3 text-base leading-7 text-gray-100 font-inter">
-                      Consectetur adipiscing elit. Vehicula massa in enim
-                      luctus. Rutrum arcu, aliquam nulla tincidunt gravida.
-                      Cursus convallis dolor semper pretium ornare.
+                      We build structured campaigns that help businesses attract the right audience and grow consistently.Focused on clarity, execution, and measurable outcomes.
                     </p>
                   </blockquote>
 
@@ -112,13 +109,14 @@ export default function InfoSection() {
                 </div>
               </div>
 
-              <div className="xl:col-span-1">
-                <img
-                  className="w-full mx-auto"
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/illustration.png"
-                  alt=""
-                />
-              </div>
+              <div className="xl:col-span-1 relative min-h-[500px] flex items-center justify-center">
+  <img
+    src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/illustration.png"
+    alt="Illustration"
+    className="absolute right-0 bottom-0 w-[500px] h-auto object-contain"
+  />
+</div>
+
             </div>
           </div>
         </section>

@@ -18,9 +18,9 @@ export default function HeroSection() {
             <span className="whitespace-nowrap">
               Join{" "}
               <strong className="text-zinc-800 dark:text-zinc-200">
-                15,725+
+                99+
               </strong>{" "}
-              other loving customers
+              other loving clients
             </span>
           </div>
 
@@ -28,12 +28,12 @@ export default function HeroSection() {
           <h1
             className="
           max-w-4xl font-heading
-          text-4xl font-semibold leading-tighter
+          text-4xl font-semibold leading-tight
           text-zinc-900 dark:text-white
-          sm:text-5xl md:text-6xl
+          sm:text-5xl md:text-5xl
         "
           >
-            The best platform to grow your business
+            Vipprow  Managing Your Digital Business Ecosystem 
           </h1>
 
           {/* Subtitle */}
@@ -42,11 +42,10 @@ export default function HeroSection() {
           mt-6 max-w-xl
           text-sm leading-relaxed
           text-zinc-600 dark:text-zinc-400
-          sm:text-md leading-tight
+          sm:text-md leading-tight md:text-2xl
         "
           >
-            The most powerful tools to boost sales, hire top talent, and access
-            exclusive market insights.
+            The Best Platform to Grow your Business.
           </p>
 
           {/* CTA Buttons */}
