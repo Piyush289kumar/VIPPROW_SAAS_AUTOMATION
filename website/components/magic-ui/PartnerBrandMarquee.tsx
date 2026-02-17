@@ -36,6 +36,7 @@ const reviews = [
   
 ];
 
+
 const firstRow = reviews.slice(0, reviews.length);
 
 const ReviewCard = ({

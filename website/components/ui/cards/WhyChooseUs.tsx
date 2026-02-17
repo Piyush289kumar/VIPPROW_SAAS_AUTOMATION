@@ -20,6 +20,7 @@ export default function WhyChooseUs() {
             />
           </div>
         </div>
+        
 
         {/* RIGHT CONTENT */}
         <div>

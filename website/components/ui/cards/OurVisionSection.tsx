@@ -26,6 +26,8 @@ export default function OurVisionSection() {
             truly matters.
           </p>
 
+          
+
           {/* Vision bullets */}
           <div className="mt-12 space-y-8">
             <VisionItem

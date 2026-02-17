@@ -47,6 +47,7 @@ export default function CompanyPage() {
         <PrimaryHeading
           heading="Why Choose Us"
           des="Vipprow creates structured, data-driven growth systems powered by performance marketing and automation."
+          
         />
         <WhyChooseUs />
       </div>

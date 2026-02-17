@@ -10,7 +10,8 @@ export default function Journey() {
          
 
           {/* Content */}
-          <div className="space-y-6 text-slate-300 leading-relaxed text-sm md:text-justify ">
+          <div className="space-y-6 text-slate-300 leading-relaxed text-sm  md:text-justify ">
+            
 
             <p>
               At <span className="text-white  text-xs md:text-lg">Vipprow</span>, our journey began with a simple belief — growth should be intentional, measurable, and built on strategy, not guesswork. The vision behind our journey is to transform how businesses experience digital growth by combining performance marketing, data intelligence, and smart automation into structured growth systems.

@@ -50,6 +50,7 @@ How We Turn Strategy into Results
             </p>
           </div>
         </div>
+        
 
         {/* RIGHT CARD */}
         <div className="relative">
