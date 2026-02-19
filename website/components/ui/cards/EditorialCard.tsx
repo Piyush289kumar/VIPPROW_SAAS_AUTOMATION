@@ -24,7 +24,7 @@ export default function EditorialCard({
       {/* Image Card */}
       <div
         className="
-          relative aspect-[1/1] overflow-hidden rounded-sm
+          relative aspect-[16/9] overflow-hidden rounded-sm
           bg-zinc-900
         "
       >

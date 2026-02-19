@@ -19,10 +19,9 @@ export default async function ArticlesPage({
   try {
     data = await fetchPublicArticles({
       page,
-      limit: 2,
+      limit: 12,
       sortBy: "createdAt",
       sortOrder: "desc",
-      filter: "active",
     });
   } catch (error) {
     console.error("🔥 Articles fetch error:", error);
