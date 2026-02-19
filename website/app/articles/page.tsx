@@ -8,9 +8,11 @@ import { fetchPublicArticles } from "../features/articles/services/article.api";
 export default async function ArticlesPage({
   searchParams,
 }: {
-  searchParams?: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const page = Number(searchParams?.page ?? 1);
+  const { page: pageParam } = await searchParams;
+
+  const page = Number(pageParam ?? 1);
 
   let data;
 
