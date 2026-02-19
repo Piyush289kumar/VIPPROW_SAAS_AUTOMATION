@@ -1,10 +1,10 @@
-'use client';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { useTheme } from 'next-themes';
-import { Input } from '@/components/ui/input';
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import { Input } from "@/components/ui/input";
 import {
   Github,
   Linkedin,
@@ -13,50 +13,89 @@ import {
   Sun,
   ArrowDownLeft,
   MessageCircle,
-} from 'lucide-react';
+  Facebook,
+  Instagram,
+  MessageCircleMore,
+  MapPin,
+} from "lucide-react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { AppConfig } from "@/types/app-config";
+import { usePublicPolicies } from "@/app/features/policy/hook/usePolicy";
 
 const data = () => ({
   navigation: {
     product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'Integrations', href: '#integrations' },
-      { name: 'Roadmap', href: '#roadmap' },
+      { name: "Features", href: "#features" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "Integrations", href: "#integrations" },
+      { name: "Roadmap", href: "#roadmap" },
     ],
     company: [
-      { name: 'About', href: '/about' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
+      { name: "About", href: "/about" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
     ],
     resources: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api' },
-      { name: 'Community', href: '/community' },
-      { name: 'Status', href: '/status' },
+      { name: "Documentation", href: "/docs" },
+      { name: "API Reference", href: "/api" },
+      { name: "Community", href: "/community" },
+      { name: "Status", href: "/status" },
     ],
     legal: [
-      { name: 'Privacy', href: '/privacy' },
-      { name: 'Terms', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
+      { name: "Privacy", href: "/privacy" },
+      { name: "Terms", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookies" },
     ],
   },
-  socialLinks: [
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Github, label: 'GitHub', href: '#' },
-    { icon: MessageCircle, label: 'Discord', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  ],
-  bottomLinks: [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/cookies', label: 'Cookie Policy' },
-  ],
 });
 
 export default function Footer() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  const appConfig = useSelector(
+    (state: RootState) => state.appConfig.data as AppConfig | null,
+  );
+
+  const socialLinks = [
+    {
+      icon: Facebook,
+      label: "Twitter",
+      href: appConfig?.facebookLink,
+    },
+    {
+      icon: Instagram,
+      label: "Twitter",
+      href: appConfig?.instagramLink,
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: appConfig?.linkedinLink,
+    },
+    {
+      icon: MessageCircleMore,
+      label: "WhatsApp",
+      href: appConfig?.whatsAppLink,
+    },
+    {
+      icon: MapPin,
+      label: "Google Map",
+      href: appConfig?.companyAddress[0]?.googleMapLocation,
+    },
+  ].filter((item) => item.href && item.href !== "");
+
+  const { data: policyResponse } = usePublicPolicies({
+    isActive: true,
+  });
+
+  const bottomLinks =
+  policyResponse?.data?.map((policy) => ({
+    href: `/policy/details/${policy._id}`, // best approach
+    label: policy.title,
+  })) || [];
 
   useEffect(() => {
     setMounted(true);
@@ -89,7 +128,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2">
               <div className="flex gap-2">
-                {data().socialLinks.map(({ icon: Icon, label, href }) => (
+                {socialLinks.map(({ icon: Icon, label, href }) => (
                   <Button
                     key={label}
                     size="icon"
@@ -97,25 +136,25 @@ export default function Footer() {
                     asChild
                     className="hover:bg-primary dark:hover:bg-blue-600 !border-primary/30 !hover:border-primary cursor-pointer shadow-none transition-all duration-500 hover:scale-110 hover:-rotate-12 hover:text-white hover:shadow-md"
                   >
-                    <Link href={href}>
+                    <Link href={href!} target="_blank">
                       <Icon className="h-4 w-4" />
                     </Link>
                   </Button>
                 ))}
               </div>
-              <Button
+              {/* <Button
                 variant="outline"
                 size="icon"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="hover:bg-primary dark:hover:bg-blue-600 !border-primary/30 !hover:border-primary cursor-pointer shadow-none transition-all duration-1000 hover:scale-110 hover:-rotate-12 hover:text-white hover:shadow-md"
               >
-                {theme === 'dark' ? (
+                {theme === "dark" ? (
                   <Sun className="h-4 w-4" />
                 ) : (
                   <Moon className="h-4 w-4" />
                 )}
                 <span className="sr-only">Toggle theme</span>
-              </Button>
+              </Button> */}
             </div>
             <form
               onSubmit={(e) => e.preventDefault()}
@@ -143,14 +182,14 @@ export default function Footer() {
                 Get the latest updates, tutorials, and exclusive offers.
               </p>
             </form>
-            <h1 className="font-heading from-muted-foreground/15 bg-gradient-to-b bg-clip-text text-5xl font-extrabold text-transparent lg:text-6xl">
+            <h1 className="font-heading from-muted-foreground/85 bg-gradient-to-b bg-clip-text text-5xl font-extrabold text-transparent lg:text-6xl">
               Grow with us.
             </h1>
           </div>
 
           {/* Navigation Links */}
           <div className="grid w-full grid-cols-2 items-start justify-between gap-8 px-5 lg:col-span-3">
-            {(['product', 'company', 'resources', 'legal'] as const).map(
+            {(["product", "company", "resources", "legal"] as const).map(
               (section) => (
                 <div key={section} className="w-full">
                   <h3 className="border-primary mb-4 -ml-5 border-l-2 pl-5 text-sm font-semibold tracking-wider uppercase">
@@ -178,11 +217,9 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="animate-rotate-3d via-blue-600 h-px w-full bg-gradient-to-r from-transparent to-transparent" />
         <div className="text-muted-foreground container m-auto flex flex-col items-center justify-between gap-4 p-4 text-xs md:flex-row md:px-0 md:text-sm">
-          <p className="">
-            &copy; {currentYear} Vipprow | All rights reserved
-          </p>
+          <p className="">&copy; {currentYear} Vipprow | All rights reserved</p>
           <div className="flex items-center gap-4">
-            {data().bottomLinks.map(({ href, label }) => (
+            {bottomLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="hover:text-foreground">
                 {label}
               </Link>

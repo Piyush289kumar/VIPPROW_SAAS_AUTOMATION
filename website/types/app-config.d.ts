@@ -13,9 +13,6 @@ export interface AppConfig {
   companyAddress: CompanyAddress[];
   facebookLink?: string;
   instagramLink?: string;
-  twitterLink?: string;
-  youtubeLink?: string;
+  linkedinLink?: string;
   whatsAppLink?: string;
-  googleAppStoreLink?: string;
-  appleAppStoreLink?: string;
 }
