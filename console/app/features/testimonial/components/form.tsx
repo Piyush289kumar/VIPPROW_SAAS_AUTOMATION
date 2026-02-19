@@ -216,10 +216,10 @@ export default function TestimonialForm({
 
                 {/* Designation */}
                 <div>
-                  <Label className="mb-2">Brand Preview</Label>
+                  <Label className="mb-2">Designation</Label>
                   <Input
                     value={values.designation}
-                    placeholder="Enter Brand Preview"
+                    placeholder="Enter Designation"
                     onChange={(e) =>
                       handleChange("designation", e.target.value)
                     }

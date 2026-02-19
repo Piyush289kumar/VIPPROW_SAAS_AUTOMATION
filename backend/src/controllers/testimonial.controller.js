@@ -159,15 +159,14 @@ export const createTestimonial = async (req, res) => {
 
     const {
       name,
-      short_description,
       rating,
       isActive,
     } = req.body;
 
-    if (!name || !short_description) {
+    if (!name) {
       return res
         .status(400)
-        .json({ message: "Name & short description are required." });
+        .json({ message: "Name is required." });
     }
 
     let avatarUrl = null;
@@ -195,7 +194,6 @@ export const createTestimonial = async (req, res) => {
 
     const testimonial = await Testimonial.create({
       name,
-      short_description: req.body.short_description,
       designation: req.body.designation,
       description: req.body.description,
       avatar: avatarUrl,
@@ -225,7 +223,7 @@ export const createTestimonial = async (req, res) => {
 export const updateTestimonial = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, designation, short_description, description, video_link, rating, isActive } = req.body;
+    const { name, designation, description, video_link, rating, isActive } = req.body;
 
     const testimonial = await Testimonial.findById(id);
     if (!testimonial) {
@@ -273,7 +271,6 @@ export const updateTestimonial = async (req, res) => {
     }
 
     testimonial.name = name ?? testimonial.name;
-    testimonial.short_description = short_description ?? testimonial.short_description;
     testimonial.designation = designation ?? testimonial.designation;
     testimonial.description = description ?? testimonial.description;
     testimonial.avatar = avatarUrl;

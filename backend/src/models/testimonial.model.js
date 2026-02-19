@@ -17,12 +17,6 @@ const testimonialSchema = new mongoose.Schema(
       default: null,
     },
 
-     short_description: {
-      type: String,
-      trim: true,
-      maxlength: [500, "Short description must be under 500 characters"],
-    },
-
     description: {
       type: String,
       required: [true, "Description is required."],
