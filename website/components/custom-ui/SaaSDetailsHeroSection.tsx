@@ -5,7 +5,17 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-export default function SaaSDetailsHeroSection() {
+export interface SaaSDetailsHeroSectionProps {
+  heading: string;
+  domain: string;
+  image: string;
+}
+
+export default function SaaSDetailsHeroSection({
+  heading,
+  domain,
+  image,
+}: SaaSDetailsHeroSectionProps) {
   return (
     <>
       <section
@@ -36,18 +46,13 @@ export default function SaaSDetailsHeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="font-heading group mx-auto w-fit rounded-3xl border-[2px] border-white/5 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent px-5 py-2 text-sm text-gray-400 mb-5">
-              Build products for everyone
-              <ArrowRight className="ml-2 inline h-4 w-4 duration-300 group-hover:translate-x-1" />
+              {domain ?? "Build products for everyone"}
+              {/* <ArrowRight className="ml-2 inline h-4 w-4 duration-300 group-hover:translate-x-1" /> */}
             </h1>
             <h1 className="font-heading mx-auto mb-6 max-w-4xl text-4xl font-semibold md:text-5xl lg:text-6xl">
-              Trade Smarter with{" "}
-              <span className="text-[#1E4EC8]">AI-Powered</span> Crypto Insights
+              {heading ?? "N/A"}
+              {/* <span className="text-[#1E4EC8]">AI-Powered</span> Crypto Insights */}
             </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-lg text-white/60 md:text-xl">
-              Lunexa combines artificial intelligence with cutting-edge trading
-              strategies to help you maximize your crypto investments with
-              precision and ease.
-            </p>
           </motion.div>
           <motion.div
             className="relative"
@@ -66,7 +71,7 @@ export default function SaaSDetailsHeroSection() {
             </div>
             <div className="relative z-10 mx-auto max-w-5xl overflow-hidden rounded-lg shadow-[0_0_50px_rgba(30,78,200,0.2)]">
               <Image
-                src="https://i.postimg.cc/FKKY5fRB/lunexa-db.webp"
+                src={image ?? "https://i.postimg.cc/FKKY5fRB/lunexa-db.webp"}
                 alt="Lunexa Dashboard"
                 width={1920}
                 height={1080}
