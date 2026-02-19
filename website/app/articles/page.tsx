@@ -9,12 +9,10 @@ import ClientCTA from "@/components/client-sections/ClientCTA";
 export default async function ArticlesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string }>;
+  searchParams?: { page?: string };
 }) {
   // ✅ unwrap searchParams
-  const { page: pageParam } = await searchParams;
-
-  const page = Number(pageParam ?? 1);
+  const page = Number(searchParams?.page ?? 1);
 
   const data = await fetchPublicArticles({
     page,
@@ -51,7 +49,7 @@ export default async function ArticlesPage({
         {/* Pagination */}
         <ArticlesClient
           currentPage={page}
-          totalPages={data.pagination.totalPages}
+          totalPages={data?.pagination?.totalPages ?? 1}
         />
       </section>
 
