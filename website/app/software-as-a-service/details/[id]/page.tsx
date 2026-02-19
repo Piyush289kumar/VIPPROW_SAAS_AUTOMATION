@@ -5,7 +5,7 @@ import FaqSection from "@/components/mvpblock-ui/FAQSection";
 export default function DigitalMarketingArticleDetails() {
   return (
     <>
-      <SaaSDetailsHeroSection />
+      {/* <SaaSDetailsHeroSection /> */}
 
       {/* FAQ Start */}
       <div className="pt-20 max-w-7xl mx-auto">
