@@ -23,34 +23,6 @@ import { RootState } from "@/redux/store";
 import { AppConfig } from "@/types/app-config";
 import { usePublicPolicies } from "@/app/features/policy/hook/usePolicy";
 
-const data = () => ({
-  navigation: {
-    product: [
-      { name: "Features", href: "#features" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "Integrations", href: "#integrations" },
-      { name: "Roadmap", href: "#roadmap" },
-    ],
-    company: [
-      { name: "About", href: "/about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/contact" },
-    ],
-    resources: [
-      { name: "Documentation", href: "/docs" },
-      { name: "API Reference", href: "/api" },
-      { name: "Community", href: "/community" },
-      { name: "Status", href: "/status" },
-    ],
-    legal: [
-      { name: "Privacy", href: "/privacy" },
-      { name: "Terms", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookies" },
-    ],
-  },
-});
-
 export default function Footer() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -88,19 +60,44 @@ export default function Footer() {
   ].filter((item) => item.href && item.href !== "");
 
   const { data: policyResponse } = usePublicPolicies({
+    sortBy: "createdAt",
+    sortOrder: "asc",
     isActive: true,
   });
 
-  const bottomLinks =
-  policyResponse?.data?.map((policy) => ({
-    href: `/policy/details/${policy._id}`, // best approach
-    label: policy.title,
-  })) || [];
+  const legalLinks =
+    policyResponse?.data?.map((policy) => ({
+      name: policy.title,
+      href: `/policy/details/${policy._id}`,
+    })) || [];
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const data = () => ({
+    navigation: {
+      product: [
+        { name: "Features", href: "#features" },
+        { name: "Pricing", href: "#pricing" },
+        { name: "Integration", href: "#integrations" },
+        { name: "Roadmap", href: "#roadmap" },
+      ],
+      company: [
+        { name: "About", href: "/about" },
+        { name: "Blog", href: "/blog" },
+        { name: "Careers", href: "/careers" },
+        { name: "Contact", href: "/contact" },
+      ],
+      resources: [
+        { name: "Docs", href: "/docs" },
+        { name: "API", href: "/api" },
+        { name: "Community", href: "/community" },
+        { name: "Status", href: "/status" },
+      ],
+      legal: legalLinks,
+    },
+  });
   const currentYear = new Date().getFullYear();
 
   if (!mounted) return null;
@@ -182,7 +179,7 @@ export default function Footer() {
                 Get the latest updates, tutorials, and exclusive offers.
               </p>
             </form>
-            <h1 className="font-heading from-muted-foreground/85 bg-gradient-to-b bg-clip-text text-5xl font-extrabold text-transparent lg:text-6xl">
+            <h1 className="font-heading from-muted-foreground/95 bg-gradient-to-b bg-clip-text text-3xl font-extrabold text-transparent lg:text-6xl">
               Grow with us.
             </h1>
           </div>
@@ -219,11 +216,11 @@ export default function Footer() {
         <div className="text-muted-foreground container m-auto flex flex-col items-center justify-between gap-4 p-4 text-xs md:flex-row md:px-0 md:text-sm">
           <p className="">&copy; {currentYear} Vipprow | All rights reserved</p>
           <div className="flex items-center gap-4">
-            {bottomLinks.map(({ href, label }) => (
+            {/* {bottomLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="hover:text-foreground">
                 {label}
               </Link>
-            ))}
+            ))} */}
           </div>
         </div>
         <span className="from-blue-600/20 absolute inset-x-0 bottom-0 left-0 -z-10 h-1/3 w-full bg-gradient-to-t" />

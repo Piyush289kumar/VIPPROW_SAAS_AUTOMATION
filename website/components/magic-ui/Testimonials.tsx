@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import { useTestimonials } from "@/app/features/testimonial/hook/useTestimonial";
 import Link from "next/link";
 import Image from "next/image";
+import { BorderBeam } from "../ui/border-beam";
 
 const reviews = [
   {
@@ -98,6 +99,12 @@ export default function TestimonialMarquee() {
                           src={testimonial.avatar ?? ""}
                           alt={testimonial.name}
                           className="w-full h-full object-cover"
+                        />
+                        <BorderBeam
+                          duration={6}
+                          size={400}
+                          borderWidth={4}
+                          className="from-transparent via-blue-500 to-transparent"
                         />
                       </div>
                     </div>
