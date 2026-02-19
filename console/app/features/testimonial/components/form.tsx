@@ -214,12 +214,14 @@ export default function TestimonialForm({
                   )}
                 </div>
 
+
+
                 {/* Designation */}
                 <div>
-                  <Label className="mb-2">Brand Preview</Label>
+                  <Label className="mb-2">Short Description</Label>
                   <Input
                     value={values.designation}
-                    placeholder="Enter Brand Preview"
+                    placeholder="Enter Short Description"
                     onChange={(e) =>
                       handleChange("designation", e.target.value)
                     }
