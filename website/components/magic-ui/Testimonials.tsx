@@ -98,13 +98,13 @@ export default function TestimonialMarquee() {
                           fill
                           src={testimonial.avatar ?? ""}
                           alt={testimonial.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover border"
                         />
                         <BorderBeam
                           duration={6}
-                          size={400}
-                          borderWidth={4}
-                          className="from-transparent via-blue-500 to-transparent"
+                          size={600}
+                          borderWidth={8}
+                          className="from-white via-blue-800 to-white"
                         />
                       </div>
                     </div>
