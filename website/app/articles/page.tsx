@@ -27,8 +27,8 @@ export default async function ArticlesPage({
   return (
     <main className="py-44 max-w-7xl mx-auto">
       <PrimaryHeading
-        heading="Empower Your Workflow with AI"
-        des="Ask your AI Agent for real-time collaboration, seamless integrations."
+        heading="Insights for Modern Digital Growth"
+        des="Stay ahead with expert-backed content on performance marketing and automation.."
       />
 
       <section className="bg-black px-6 py-16">

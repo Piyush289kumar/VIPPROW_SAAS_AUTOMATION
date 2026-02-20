@@ -28,7 +28,7 @@ export function NavbarMenu() {
       link: "/services",
     },
     {
-      name: "Case Studies",
+      name: " Our Clients",
       link: "/client-case-study",
     },
     {
