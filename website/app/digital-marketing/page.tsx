@@ -17,8 +17,6 @@ export default function DigitalMarketingPage() {
       <InfoSection />
       {/* Info Section End */}
 
-
-      
       {/* Digital Marketing Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
@@ -29,12 +27,8 @@ export default function DigitalMarketingPage() {
       </div>
       {/* Digital Marketing Feature End */}
 
-
       {/* Services Start */}
-      <ServiceGridScroller
-        initialTab="Marketing"
-        showTabs={false}
-      />
+      <ServiceGridScroller domainSlug="Digital Marketing" />
 
       {/* <ServiceGridScroller /> */}
       {/* Services End */}
@@ -48,7 +42,6 @@ export default function DigitalMarketingPage() {
         <ClientTestimonialMarquee />
       </div>
       {/* Testimonial End */}
-
 
       {/* CTA Start */}
       <div className="pt-20 max-w-7xl mx-auto">

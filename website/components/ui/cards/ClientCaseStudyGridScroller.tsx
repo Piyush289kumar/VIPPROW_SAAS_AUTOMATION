@@ -68,7 +68,7 @@ export default function ClientCaseStudyGridScroller() {
         >
           {SERVICES.map((service, index) => (
             <SwiperSlide key={index} className="!w-[260px] md:!w-[280px]">
-              <GlassBottomCard {...service} />
+              <GlassBottomCard href="#" {...service} />
             </SwiperSlide>
           ))}
         </Swiper>
