@@ -6,10 +6,10 @@ import { ChatBubble } from "./ChatBubble";
 import { useTypewriterLoop } from "@/hooks/useTypewriter";
 
 const senderMessage =
-  "Hey, I need help scheduling a team meeting that works well for everyone. Any suggestions for finding an optimal time slot?";
+  "Hey, how can I automate my marketing workflows and improve lead conversion??";
 
 const receiverMessage =
-  "Based on your calendar patterns and preferences, I recommend scheduling the team meeting for Tuesday at 2pm. This time slot has historically had the highest attendance rate.";
+  "Build structured workflows that automate lead scoring and nuturning process Optimized messaging and targeting startegy .";
 
 export function ChatDemoLoop({ className }: { className?: string }) {
   const typedSender = useTypewriterLoop(senderMessage, 28, 2000);

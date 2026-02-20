@@ -3,6 +3,7 @@ import ClientCaseStudyHeroSection from "@/components/custom-ui/ClientCaseStudyHe
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
 import FlipCardGrid from "@/components/sections/FlipCardGrid";
 import ClientCaseStudyGridScroller from "@/components/ui/cards/ClientCaseStudyGridScroller";
+import ClientMain from "@/components/ui/cards/ClientMain";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
 export default function ClientCaseStudyPage() {
@@ -13,18 +14,21 @@ export default function ClientCaseStudyPage() {
       {/* Top 3 Pointers Start */}
       <div className="max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Solving Challenges. Scaling Business Growth."
+          des="We turn complex business challenges into structured, data-driven strategies.
+Our systems are built to deliver measurable results and sustainable growth."
         />
         <FlipCardGrid />
       </div>
+      <ClientMain />
+
       {/* Top 3 Pointers End */}
 
       {/* Client Category A Grid Start. */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading=" Education Sector"
+          des="We connect institutions with the right students using targeted campaigns and intelligent automation.."
         />
         <ClientCaseStudyGridScroller />
       </div>
@@ -33,8 +37,8 @@ export default function ClientCaseStudyPage() {
       {/* Client Category B Grid Start. */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Health Care Sector"
+          des="Through analytics and automation, we help healthcare providers grow efficiently and consistently.."
         />
         <ClientCaseStudyGridScroller />
       </div>
@@ -43,8 +47,37 @@ export default function ClientCaseStudyPage() {
       {/* Client Category C Grid Start. */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Electrical's & Electronics Sector"
+          des="We help electrical and electronics businesses increase product visibility, generate quality inquiries, and drive consistent sales through performance marketing and automation.."
+        />
+        <ClientCaseStudyGridScroller />
+      </div>
+
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Health Care Sector"
+          des="Through analytics and automation, we help healthcare providers grow efficiently and consistently.."
+        />
+        <ClientCaseStudyGridScroller />
+      </div>
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="clothing Sector"
+          des="We help fashion brands increase visibility and drive consistent online sales through performance marketing and targeted campaigns.."
+        />
+        <ClientCaseStudyGridScroller />
+      </div>
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Solar Sector"
+          des="From residential to commercial projects, we connect solar companies with serious buyers using performance marketing."
+        />
+        <ClientCaseStudyGridScroller />
+      </div>
+      <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Jewellery Sector"
+          des="We elevate jewellery brands with premium digital positioning, high-intent targeting, and conversion-focused strategies."
         />
         <ClientCaseStudyGridScroller />
       </div>

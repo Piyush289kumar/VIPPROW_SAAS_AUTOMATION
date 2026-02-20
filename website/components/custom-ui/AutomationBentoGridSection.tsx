@@ -52,7 +52,7 @@ const BentoGridItem = ({
           <p className="text-muted-foreground text-sm">{description}</p>
         </div>
         <div className="text-blue-600 mt-4 flex items-center text-sm">
-          <span className="mr-1">Learn more</span>
+         
           <ArrowRight className="size-4 transition-all duration-500 group-hover:translate-x-2" />
         </div>
       </div>
@@ -63,41 +63,41 @@ const BentoGridItem = ({
 
 const items = [
   {
-    title: 'Developer Experience',
+    title: 'Predictive Revenue Forecasting',
     description:
-      'Built with developers in mind, making implementation a breeze.',
+      'We use historical data and AI models to forecast sales trends and future revenue growth.',
     icon: <Code className="size-6" />,
     size: 'large' as const,
   },
   {
-    title: 'Accessibility',
+    title: 'Customer Journey Automation',
     description:
-      'Built with a11y best practices to ensure your app is usable by everyone.',
+      'We design automated journeys that guide customers from first interaction to final conversion seamlessly.',
     icon: <Layers className="size-6" />,
     size: 'small' as const,
   },
   {
-    title: 'Responsive Design',
-    description: 'Create layouts that adapt to any screen size with ease.',
+    title: 'Unified Business Command Center',
+    description: 'Manage marketing, sales, and operations from one centralized automation dashboard.',
     icon: <Layers className="size-6" />,
     size: 'medium' as const,
   },
   {
-    title: 'Customizable',
-    description: "Tailor components to match your brand's unique style.",
+    title: 'Scalable Digital Infrastructure',
+    description: "Vipprow creates automation systems that grow with your business without increasing complexity.",
     icon: <Palette className="size-6" />,
     size: 'medium' as const,
   },
   {
     title: 'Performance',
-    description: 'Optimized for speed and efficiency across all devices.',
+    description: 'Vipprow builds systems that automatically scale marketing and sales as your business grows..',
     icon: <Zap className="size-6" />,
     size: 'small' as const,
   },
   {
-    title: 'Documentation',
+    title: 'Smart Decision Framework',
     description:
-      'Comprehensive guides and examples to help you get started quickly.',
+      'continuously analyzes performance and recommends actions to improve efficiency and revenue.',
     icon: <FileText className="size-6" />,
     size: 'large' as const,
   },

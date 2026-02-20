@@ -4,23 +4,36 @@ import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { GoCopilot } from "react-icons/go";
 import Link from "next/link";
+import { IconType } from "react-icons/lib";
+import { Icon } from "lucide-react";
+
+type ServiceType = "business-automation" | "digital-marketing" | "software-development";
 
 interface AnimatedSVGCardProp {
-  href: string | "#";
+  href: string;
+  title: string;
+  description: string;
+  serviceType: ServiceType;
+  icon?: IconType; // optional if not always used
 }
 
-export function AnimatedSVGCard({ href }: AnimatedSVGCardProp) {
+export function AnimatedSVGCard({
+  href,
+  title,
+  description,
+  // icon: Icon,
+}: AnimatedSVGCardProp) {
   return (
     <Link href={href}>
       <Card>
         <CardSkeletonContainer>
+          {/* <div className="h-full flex items-center justify-center">
+            <Icon className="h-10 w-10 text-white" />
+            </div> */}
           <Skeleton />
         </CardSkeletonContainer>
-        <CardTitle>Vipprow Elit Card</CardTitle>
-        <CardDescription>
-          A card that showcases a set of tools that you use to create your
-          product.
-        </CardDescription>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
       </Card>
     </Link>
   );
@@ -89,13 +102,13 @@ const Skeleton = () => {
           <GoCopilot className="h-6 w-6 dark:text-white" />
         </Container>
         <Container className="circle-3">
-          <OpenAILogo className="h-8 w-8 dark:text-white" />
-        </Container>
-        <Container className="h-12 w-12 circle-4">
           <MetaIconOutline className="h-6 w-6 " />
         </Container>
+        <Container className="h-12 w-12 circle-4">
+          <FacebookLogo className="w-8 h-8" />
+        </Container>
         <Container className="h-8 w-8 circle-5">
-          <GeminiLogo className="h-4 w-4 " />
+          <YouTubeLogo className="text-red-600 w-4 h-4" />
         </Container>
       </div>
 
@@ -107,8 +120,6 @@ const Skeleton = () => {
     </div>
   );
 };
-
-
 
 const Sparkles = () => {
   const [stars, setStars] = React.useState<
@@ -160,7 +171,6 @@ const Sparkles = () => {
     </div>
   );
 };
-
 
 export const Card = ({
   className,
@@ -262,6 +272,24 @@ const Container = ({
     </div>
   );
 };
+export const FacebookLogo = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* Blue Circle */}
+      <circle cx="12" cy="12" r="12" fill="#1877F2" />
+
+      {/* White f */}
+      <path
+        d="M13.5 8H15V6h-1.5C11.57 6 11 7.12 11 8.7V10H9v2h2v6h2v-6h2l.3-2h-2.3V8.9c0-.58.16-.9.8-.9z"
+        fill="white"
+      />
+    </svg>
+  );
+};
 
 export const ClaudeLogo = ({ className }: { className?: string }) => {
   return (
@@ -301,6 +329,20 @@ export const OpenAILogo = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+export const YouTubeLogo = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      className={className}
+      width="28"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M23.498 6.186a2.997 2.997 0 0 0-2.112-2.12C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.386.566A2.997 2.997 0 0 0 .502 6.186 31.16 31.16 0 0 0 0 12a31.16 31.16 0 0 0 .502 5.814 2.997 2.997 0 0 0 2.112 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.386-.566a2.997 2.997 0 0 0 2.112-2.12A31.16 31.16 0 0 0 24 12a31.16 31.16 0 0 0-.502-5.814zM9.75 15.568V8.432L15.818 12 9.75 15.568z" />
+    </svg>
+  );
+};
+
 export const GeminiLogo = ({ className }: { className?: string }) => {
   return (
     <svg
