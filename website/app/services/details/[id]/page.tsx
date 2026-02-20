@@ -63,7 +63,7 @@ export default function DigitalMarketingArticleDetails() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="pt-36 max-w-5xl mx-auto px-6"
+        className="pt-0 max-w-5xl mx-auto px-6"
       >
         {/* Content Card */}
         <div>

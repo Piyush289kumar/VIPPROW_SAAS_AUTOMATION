@@ -47,11 +47,11 @@ export default function GlassBottomCard({
             <p className="text-xs text-white/70">{subtitle}</p>
           </div>
 
-          {tag && (
+          {/* {tag && (
             <p className="text-xs font-heading italic text-white font-bold">
               — {tag}
             </p>
-          )}
+          )} */}
         </div>
       </div>
     </Link>
