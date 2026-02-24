@@ -4,10 +4,15 @@ import SaasHeroSection from "@/components/custom-ui/SaasHeroSection";
 import WorkFlowSteps from "@/components/custom-ui/WorkFlowSteps";
 import SaasFeatureSteps from "@/components/mvpblock-ui/SaasFeatureSteps";
 import TopProductSparkles from "@/components/mvpblock-ui/TopProductSparkles";
+import DescriptionSection from "@/components/ui/cards/DescriptionSection";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
-import SoftwareDes from "@/components/ui/cards/SoftwareDes";
-import SoftwareHighlighted from "@/components/ui/cards/SoftwareHighlited";
+
+import TextSection from "@/components/dynamic/DynamicContent";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
+
+import DynamicSection from "@/components/dynamic/DynamicContent";
+import { saasImageContent, saasTextContent } from "@/app/data/software-content";
+import SoftwareDes from "@/components/ui/cards/SoftwareDes";
 
 export default function SoftwareAsAServicePage() {
   return (
@@ -22,7 +27,7 @@ export default function SoftwareAsAServicePage() {
       <TopProductSparkles />
       {/* Top Product Sparkles Start */}
       {/* Testimonial Start */}
-      <div className="pt-20 max-w-7xl mx-auto">
+      <div className="pt-0 md:pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
           heading="Scale Smarter with SaaS Solutions"
           des="Empower your business with secure, cloud-based software designed to streamline operations and boost productivity.."
@@ -35,20 +40,22 @@ export default function SoftwareAsAServicePage() {
       {/* Services End */}
       {/* software service kliye speciality 1 */}
       <div className="pt-20 max-w-7xl mx-auto">
-        <PrimaryHeading
-          heading="Client Experiences That Matter"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
-        />
-        <SoftwareDes />
+        <>
+          <DynamicSection
+            textContent={{
+              heading: saasTextContent[0].heading,
+              description: saasTextContent[0].description,
+            }}
+          />
+
+          {/* <DynamicSection imageSections={saasImageContent[0].sections} /> */}
+
+          <DynamicSection imageSections={saasImageContent[0].sections} />
+        </>
       </div>
-       <div className="pt-20 max-w-7xl mx-auto">
-        <PrimaryHeading
-          heading="Client Experiences That Matter"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
-        />
-        <SoftwareHighlighted />
-        </div>
- {/* software service kliye speciality 2 */}
+      {/* <SoftwareDes /> */}
+
+      {/* software service kliye speciality 2 */}
 
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">

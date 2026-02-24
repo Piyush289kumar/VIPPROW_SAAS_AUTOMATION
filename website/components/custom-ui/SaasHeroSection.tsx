@@ -23,10 +23,10 @@ export default function SaasHeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setStats((prev) => {
-        const newUsers = prev.users >= 20000 ? 20000 : prev.users + 500;
+        const newUsers = prev.users >=500 ? 500 : prev.users + 10;
         const newTransactions =
-          prev.transactions >= 1500000 ? 1500000 : prev.transactions + 37500;
-        const newNetworks = prev.networks >= 40 ? 40 : prev.networks + 1;
+          prev.transactions >= 1000000 ? 1000000 : prev.transactions + 37500;
+        const newNetworks = prev.networks >= 10 ? 10 : prev.networks + 1;
 
         if (
           newUsers === 20000 &&

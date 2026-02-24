@@ -29,12 +29,12 @@ import { cn } from "@/lib/utils";
 export const description = "A bar chart with a custom label";
 
 const chartData = [
-  { month: "January", desktop: 112, desktopLabel: "Good" },
-  { month: "February", desktop: 305, desktopLabel: "Very High" },
-  { month: "March", desktop: 237, desktopLabel: "Medium" },
-  { month: "April", desktop: 73, desktopLabel: "Low" },
-  { month: "May", desktop: 209, desktopLabel: "Growing" },
-  { month: "June", desktop: 214, desktopLabel: "Stable" },
+  { month: "January", desktop: 112, desktopLabel: "3CR" },
+  { month: "February", desktop: 305, desktopLabel: "10CR" },
+  { month: "March", desktop: 237, desktopLabel: "7CR" },
+  { month: "April", desktop: 73, desktopLabel: "2CR" },
+  { month: "May", desktop: 209, desktopLabel: "6CR" },
+  { month: "June", desktop: 214, desktopLabel: "6.5CR" },
 ];
 
 

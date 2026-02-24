@@ -10,6 +10,8 @@ import BusinessDes from "@/components/ui/cards/BusinessDes";
 import BusinessHighlighted from "@/components/ui/cards/BusinessHighlited";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
+import { automationImageContent, automationTextContent } from "../data/automation-content";
+import DynamicSection from "@/components/dynamic/DynamicContent";
 
 export default function AutomationPage() {
   return (
@@ -28,7 +30,7 @@ export default function AutomationPage() {
       </div>
       {/* Automation Feature End */}
 
-       {/* AutomationBentoGridSection Feature Start */}
+      {/* AutomationBentoGridSection Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
           heading="Where Automation Meets Intelligence"
@@ -37,16 +39,28 @@ export default function AutomationPage() {
         <AutomationBentoGridSection />
       </div>
       {/* AutomationBentoGridSection Feature End */}
-      {/* business automation page for speciality */}
-       <div className="pt-20 max-w-7xl mx-auto">
+      {/* business automation content start*/}
+
+      <div className="pt-20 max-w-7xl mx-auto">
+        <>
+        <DynamicSection
+          textContent={{
+            heading: automationTextContent[0].heading,
+            description: automationTextContent[0].description,
+          }}
+        />
+         <DynamicSection imageSections={automationImageContent[0].sections} />
+         </>
+      </div>
+{/* business automation content end */}
+      {/* <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
           heading="Vipprow Business Automation (AI)"
           des="By reducing manual work and automating repetitive tasks, we enable businesses to focus more on strategy, growth, and customer experience.."
         />
         <BusinessDes />
+      </div> */}
 
-      </div>
-     
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading

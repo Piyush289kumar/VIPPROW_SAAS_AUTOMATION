@@ -3,12 +3,14 @@ import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimo
 import DigitalMarketingHeroSection from "@/components/custom-ui/DigitalMarketingHeroSection";
 import InfoSection from "@/components/custom-ui/InfoSection";
 import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
-import DigitalDes from "@/components/ui/cards/DigitalDes";
+import DescriptionSection from "@/components/ui/cards/DescriptionSection";
 
-import DigitalHighlighted from "@/components/ui/cards/DigitalHighlited";
+
 
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
+import { digitalTextContent } from "../data/digital-content";
+import DynamicSection from "@/components/dynamic/DynamicContent";
 
 export default function DigitalMarketingPage() {
   return (
@@ -38,15 +40,26 @@ export default function DigitalMarketingPage() {
 
       {/* <ServiceGridScroller /> */}
       {/* Services End */}
-      {/* digital marketing me koi speciality batani ho to 1*/}
+      {/* digital marketing content start*/}
       <div className="pt-20 max-w-7xl mx-auto">
-        <PrimaryHeading
-          heading="Vipprow Digital Marketing Services  "
-          des="Authentic stories from brands that achieved measurable growth through Vipprow’s strategic approach."
-        />
-        <DigitalDes />
-      </div>
-      {/* digital marketing me koi speciality batani ho to 2*/}
+              <>
+                <DynamicSection
+                  textContent={{
+                    heading: digitalTextContent[0].heading,
+                     description: digitalTextContent[0].description,
+                     long_description : digitalTextContent[0].long_description,
+                      highlight: digitalTextContent[0].highlight,
+                    
+                  }}
+                />
+      
+                {/* <DynamicSection imageSections={saasImageContent[0].sections} /> */}
+      
+              
+              </>
+            </div>
+      {/* digital marketing content End*/}
+      
       
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
