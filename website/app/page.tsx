@@ -10,8 +10,8 @@ import { Metadata } from "next";
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
 
 export const metadata: Metadata = {
-  title: "ABC VIPPROW",
-  description: "VIPPROW Landing",
+  title: "VIPPROW",
+  description: "VIPPROW",
 };
 
 export default function Home() {
