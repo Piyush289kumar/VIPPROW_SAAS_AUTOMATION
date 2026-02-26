@@ -6,6 +6,8 @@ import InfoSection from "@/components/custom-ui/InfoSection";
 import AutomationFeatures from "@/components/mvpblock-ui/AutomationFeatures";
 import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
+import BusinessDes from "@/components/ui/cards/BusinessDes";
+import BusinessHighlighted from "@/components/ui/cards/BusinessHighlited";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
@@ -36,12 +38,21 @@ export default function AutomationPage() {
         
       </div>
       {/* AutomationBentoGridSection Feature End */}
+      {/* business automation page for speciality */}
+       <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Vipprow Business Automation (AI)"
+          des="By reducing manual work and automating repetitive tasks, we enable businesses to focus more on strategy, growth, and customer experience.."
+        />
+        <BusinessDes />
 
+      </div>
+     
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Client Experiences That Matter"
+          des="Authentic stories from brands that achieved measurable growth through Vipprow’s strategic approach."
         />
         <ClientTestimonialMarquee />
       </div>
