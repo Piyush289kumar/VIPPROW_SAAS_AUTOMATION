@@ -4,9 +4,7 @@ import DigitalMarketingHeroSection from "@/components/custom-ui/DigitalMarketing
 import InfoSection from "@/components/custom-ui/InfoSection";
 import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
 import DigitalDes from "@/components/ui/cards/DigitalDes";
-
 import DigitalHighlighted from "@/components/ui/cards/DigitalHighlited";
-
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
 
