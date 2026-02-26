@@ -33,6 +33,7 @@ export default function AutomationPage() {
           des="Transform daily operations with AI-powered workflows, integrations, and actionable analytics."
         />
         <AutomationBentoGridSection />
+        
       </div>
       {/* AutomationBentoGridSection Feature End */}
 
