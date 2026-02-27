@@ -7,51 +7,55 @@ import { RootState } from "@/redux/store";
 import { AppConfig } from "@/types/app-config";
 
 export default function ContactSection() {
-
-    const appConfig = useSelector(
+  const appConfig = useSelector(
     (state: RootState) => state.appConfig.data as AppConfig | null,
   );
 
-
   return (
-    <section className="relative pb-28 px-6">
-      <div className="mx-auto flex flex-col-reverse md:flex-row justify-between gap-40 md:gap-4 max-w-6xl">
-        {/* LEFT CONTENT */}
-        <div>
-          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
-            Contact
-          </span>
+   <section className="relative py-20 px-4 sm:px-6">
+  <div className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    
+    {/* LEFT CONTENT */}
+    <div className="w-full">
+      <span className="inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-medium text-primary">
+        Contact
+      </span>
 
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white font-heading">
-            Let’s talk about your next move
-          </h2>
+      <h2 className="mt-6 text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-900 dark:text-white">
+        Let’s talk about your next move
+      </h2>
 
-          <p className="mt-4 max-w-xl text-sm text-neutral-600 dark:text-neutral-400 font-heading">
-           Whether you’re scaling a SaaS, automating workflows, or exploring ideas, we’re ready to help. We usually reply within 24 hours
-          </p>
+      <p className="mt-4 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-xl">
+        Whether you’re scaling a SaaS, automating workflows, or exploring
+        ideas, we’re ready to help. We usually reply within 24 hours.
+      </p>
 
-          {/* INFO */}
-          <div className="mt-10 space-y-6">
-            <InfoItem
-              icon={<Mail />}
-              title="Email"
-              value={`${appConfig?.email}`}
-            />
-            <InfoItem icon={<Phone />} title="Phone" value={`${appConfig?.phoneNumber}`} />
-            <InfoItem
-              icon={<MapPin />}
-              title="Location"
-              value={`${appConfig?.companyAddress[0]?.address}`}
-            />
-          </div>
-        </div>
-
-        {/* RIGHT FORM */}
-        <div className="relative">
-          <ContactForm />
-        </div>
+      {/* INFO */}
+      <div className="mt-10 space-y-6">
+        <InfoItem icon={<Mail />} title="Email" value={`${appConfig?.email}`} />
+        <InfoItem icon={<Phone />} title="Phone" value={`${appConfig?.phoneNumber}`} />
+        <InfoItem
+          icon={<MapPin />}
+          title="Location"
+          value={`${appConfig?.companyAddress[0]?.address}`}
+        />
       </div>
-    </section>
+    </div>
+
+    {/* RIGHT FORM */}
+    <div className="w-full">
+      <div className="w-full rounded-xl overflow-hidden">
+        <iframe
+          src="https://maglo-lead-form-6zkeu.ondigitalocean.app/vippro"
+          className="w-full h-[650px] sm:h-[700px] md:h-[750px]"
+          frameBorder="0"
+          title="Contact Form"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
   );
 }
 
