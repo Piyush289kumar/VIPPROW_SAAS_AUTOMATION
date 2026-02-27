@@ -67,50 +67,99 @@ export function ContactForm({
   };
 
   // Handle Form Submit
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    // Optional validation (recommended)
-    if (selectedServices.length === 0) {
-      toast.error("Please select at least one service.");
-      return;
+  //   // Optional validation (recommended)
+  //   if (selectedServices.length === 0) {
+  //     toast.error("Please select at least one service.");
+  //     return;
+  //   }
+
+  //   // Prepare final payload
+  //   const payload = {
+  //     ...form,
+  //     services: selectedServices.map((service) => service._id), // send only ids
+  //   };
+
+  //   submitMutation.mutate(payload, {
+  //     onSuccess: () => {
+  //       console.log("Form submitted successfully.");
+  //       toast.success("Form submitted successfully.");
+
+  //       // Reset form fields
+  //       setForm({
+  //         type: "General",
+  //         name: "",
+  //         email: "",
+  //         phone: "",
+  //         message: "",
+  //         subject: "",
+  //       });
+
+  //       // Reset selected services
+  //       setSelectedServices([]); // this will now clear dropdown
+  //     },
+
+  //     onError: (err: unknown) => {
+  //       const errorMessage =
+  //         (err as { response?: { data?: { message?: string } } })?.response
+  //           ?.data?.message || "Something went wrong. Try again";
+
+  //       toast.error(errorMessage);
+  //       console.log("Submission error:", errorMessage);
+  //     },
+  //   });
+  // };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  if (selectedServices.length === 0) {
+    toast.error("Please select at least one service.");
+    return;
+  }
+
+  const payload = {
+    ...form,
+    services: selectedServices.map((service) => service.title), 
+    // send title instead of _id for external form
+  };
+
+  try {
+    const response = await fetch(
+      "https://maglo-lead-form-6zkeu.ondigitalocean.app/vippro",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to submit form");
     }
 
-    // Prepare final payload
-    const payload = {
-      ...form,
-      services: selectedServices.map((service) => service._id), // send only ids
-    };
+    toast.success("Form submitted successfully.");
 
-    submitMutation.mutate(payload, {
-      onSuccess: () => {
-        console.log("Form submitted successfully.");
-        toast.success("Form submitted successfully.");
-
-        // Reset form fields
-        setForm({
-          type: "General",
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-          subject: "",
-        });
-
-        // Reset selected services
-        setSelectedServices([]); // this will now clear dropdown
-      },
-
-      onError: (err: unknown) => {
-        const errorMessage =
-          (err as { response?: { data?: { message?: string } } })?.response
-            ?.data?.message || "Something went wrong. Try again";
-
-        toast.error(errorMessage);
-        console.log("Submission error:", errorMessage);
-      },
+    // Reset form
+    setForm({
+      type: "General",
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      subject: "",
     });
-  };
+
+    setSelectedServices([]);
+  } catch (error) {
+    console.error(error);
+    toast.error("Something went wrong. Try again.");
+  }
+};
 
   return (
     <div
@@ -236,7 +285,7 @@ export function ContactForm({
               </Field>
 
               <Field>
-                <Button type="submit" disabled={submitMutation.isPaused}>
+              <Button type="submit">
                   {submitMutation.isPending ? "Submitting" : "Get in touch"}
                 </Button>
               </Field>
