@@ -6,33 +6,28 @@ import { Star } from "lucide-react";
 export default function MissionSection() {
   return (
     <section className="relative w-full bg-black text-white py-20 px-6 md:px-16">
-      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-20 items-center md:text-justify">
         {/* LEFT CONTENT */}
         <div>
           <span className="text-sm uppercase tracking-widest text-neutral-400">
-            OUR VISION
+            About Us
           </span>
 
           <h2 className="mt-4 text-4xl md:text-4xl font-semibold font-heading leading-tighter">
-            How we helped Hourglass
+            How We Shape the Future of Business Growth
           </h2>
 
           <div className="mt-10 mb-10 space-y-6 text-neutral-400 leading-relaxed font-heading text-sm">
             <p>
-              Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-              suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
-              quis montes, sit sit.
+             At Vipprow, our vision is to redefine digital growth by making it strategic, scalable, and measurable. We aim to empower businesses with performance-led marketing and automation systems that eliminate guesswork and deliver consistent results.
             </p>
             <p>
-              Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-              suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
-              quis montes, sit sit.
+             
+We believe growth should not depend on trial and error. Instead, it should be driven by data, clarity, and intelligent systems that adapt as businesses evolve. Our vision is to help brands move faster, make smarter decisions, and build a strong digital foundation that supports long-term success
             </p>
 
             <p>
-              Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
-              mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
-              quis fusce augue enim.
+              By combining performance marketing, SEO, and SaaS automation, Vipprow envisions a future where businesses operate efficiently, scale confidently, and stay ahead in a competitive digital landscape.
             </p>
           </div>
 
@@ -41,29 +36,27 @@ export default function MissionSection() {
           </span>
 
           <h2 className="mt-4 text-4xl md:text-4xl font-semibold font-heading leading-tighter">
-            How we helped Hourglass
+           
+How We Turn Strategy into Results
           </h2>
 
           <div className="mt-10 space-y-6 text-neutral-400 leading-relaxed font-heading text-sm">
             <p>
-              Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
-              suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
-              quis montes, sit sit.
+             Our mission at Vipprow is to help businesses achieve sustainable digital growth through performance marketing, automation, and technology-driven solutions.
             </p>
 
             <p>
-              Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
-              mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
-              quis fusce augue enim.
+            We are committed to understanding each client’s unique goals and challenges, and transforming them into actionable strategies that drive visibility, leads, and conversions. Through continuous optimization, analytics, and automation, we ensure every effort delivers measurable impact.
             </p>
           </div>
         </div>
+        
 
         {/* RIGHT CARD */}
         <div className="relative">
           <div className="overflow-hidden rounded-2xl bg-neutral-900 shadow-2xl">
             <Image
-              src="/assets/images/company/mission.jpeg"
+              src="/assets/company/About.jpg"
               alt="Client testimonial"
               width={800}
               height={800}
@@ -87,11 +80,9 @@ export default function MissionSection() {
 "
             >
               <div>
-                <h4 className="text-md font-semibold font-heading text-white">
-                  Lulu Meyers
-                </h4>
+                
                 <p className="text-sm text-white/70">
-                  PM, Hourglass Web Design Agency
+                 Powered by Data. Driven by Performance.
                 </p>
               </div>
 

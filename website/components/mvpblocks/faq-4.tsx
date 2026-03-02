@@ -14,76 +14,53 @@ import { BorderBeam } from '@/components/ui/border-beam';
 const data = [
   {
     id: '1',
-    question: 'How can I start using your amazing service?',
+    question: 'How does Vipprow help improve brand credibility online??',
     answer:
-      'Getting started is easy! Simply sign up for an account, complete your profile, and you can begin using our services immediately. No credit card required for the first 14 days.',
+      'Automates work, boosts sales, improves efficiency, and helps you scale faster with smart tools',
   },
   {
     id: '2',
-    question: 'Which payment methods are supported on your platform?',
+    question: 'Suitable for Small Businesses?',
     answer:
-      'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans. All payments are securely processed through encrypted channels.',
+      ' Yes. Affordable, scalable, and simple tools built for startups and growing businesses..',
   },
   {
     id: '3',
-    question: 'Can I cancel my subscription anytime I want?',
+    question: 'Marketing Campaign Automation?',
     answer:
-      'Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees, and you will continue to have access until the end of your billing period.',
+      ' Automate email, SMS, and digital campaigns with tracking and real-time performance insights. ',
   },
   {
     id: '4',
-    question: 'Do you provide enterprise custom solutions for businesses?',
+    question: 'How CRM Improves Sales?',
     answer:
-      'Absolutely! We provide custom enterprise solutions with dedicated support, advanced features, and personalized onboarding. Contact our sales team to discuss your specific requirements.',
+      ' Organizes leads, automates follow-ups, and helps close deals faster with better tracking..',
   },
   {
     id: '5',
     question: 'How secure is user data on your platform?',
     answer:
-      'We take security seriously. Our platform uses bank-level encryption, regular security audits, and complies with industry standards. Your data is stored in secure SOC 2 certified data centers.',
+      'Advanced security, encryption, and cloud systems keep your business data protected..',
   },
   {
     id: '6',
-    question: 'Is a completely free trial currently available now?',
+    question: 'Customized Business Solutions?',
     answer:
-      'Yes! We offer a 14-day free trial with full access to all features. No credit card is required to sign up for the trial.',
+      ' Tailored automation and marketing strategies designed for your unique business goals..',
   },
   {
     id: '7',
-    question: 'Do you provide customer support for all users?',
+    question: 'Industries Vipprow Supports?',
     answer:
-      'Absolutely! Our dedicated support team is available 24/7 via chat and email to help you resolve any issues.',
+      'Flexible platform serving startups, retail, agencies, e-commerce, and enterprises.',
   },
   {
     id: '8',
-    question: 'Can I upgrade or downgrade my plan anytime?',
-    answer:
-      'Yes, you can change your subscription plan at any time from your account settings. Your billing will be adjusted automatically.',
+    question: 'Reduce Operational Costs?',
+    answer:'One platform replaces many tools, cutting expenses and improving productivity.',
   },
-  {
-    id: '9',
-    question: 'Do you integrate with any popular third-party tools?',
-    answer:
-      'We integrate with popular platforms like Slack, Google Workspace, and Zapier to streamline your workflow.',
-  },
-  {
-    id: '10',
-    question: 'What happens after the free trial period ends?',
-    answer:
-      'When your trial ends, you can choose a subscription plan to continue using the service. Your data will remain saved for 30 days.',
-  },
-  {
-    id: '11',
-    question: 'Do you offer refunds for unsatisfied subscribed users?',
-    answer:
-      "Yes, we offer a 7-day money-back guarantee if you're not satisfied with the service. Please contact support for assistance.",
-  },
-  {
-    id: '12',
-    question: 'Is my information shared with any third parties?',
-    answer:
-      'No, we do not share or sell your personal information. Your privacy and data security are our top priorities.',
-  },
+  
+ 
 ];
 
 export default function Faq4() {
@@ -117,7 +94,7 @@ export default function Faq4() {
 
   return (
     <section className="relative flex w-full flex-col items-center justify-center py-5">
-      <div className="container m-auto flex min-h-screen w-full flex-col items-center justify-center p-3 lg:p-5">
+      <div className="container m-auto flex  w-full flex-col items-center justify-center p-3 lg:p-5">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -141,7 +118,7 @@ export default function Faq4() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mb-10 w-full border-b pb-10"
+          className="mb-6 w-full border-b pb-6"
         >
           <Accordion
             type="multiple"

@@ -3,10 +3,15 @@ import ClientTestimonialMarquee from "@/components/client-sections/ClientTestimo
 import AutomationBentoGridSection from "@/components/custom-ui/AutomationBentoGridSection";
 import AutomationHeroSection from "@/components/custom-ui/AutomationHeroSection";
 import InfoSection from "@/components/custom-ui/InfoSection";
+import AutomationFeatures from "@/components/mvpblock-ui/AutomationFeatures";
 import DigitalMarketingFeatureSection from "@/components/mvpblock-ui/DigitalMarketingFeatureSection";
 import FaqSection from "@/components/mvpblock-ui/FAQSection";
+import BusinessDes from "@/components/ui/cards/BusinessDes";
+import BusinessHighlighted from "@/components/ui/cards/BusinessHighlited";
 import ServiceGridScroller from "@/components/ui/cards/ServiceGridScroller";
 import PrimaryHeading from "@/components/ui/heading/PrimaryHeading";
+import { automationImageContent, automationTextContent } from "../data/automation-content";
+import DynamicSection from "@/components/dynamic/DynamicContent";
 
 export default function AutomationPage() {
   return (
@@ -15,31 +20,52 @@ export default function AutomationPage() {
       <AutomationHeroSection />
       {/*Automation Hero Section End. */}
 
-      {/* Digital Marketing Feature Start */}
+      {/* Automation Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Simplify Work.Accelerate Success"
+          des="Vipprow Business Automation solutions are designed to simplify complex workflows and remove repetitive manual tasks.."
         />
-        <DigitalMarketingFeatureSection />
+        <AutomationFeatures />
       </div>
-      {/* Digital Marketing Feature End */}
+      {/* Automation Feature End */}
 
-       {/* AutomationBentoGridSection Feature Start */}
+      {/* AutomationBentoGridSection Feature Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Where Automation Meets Intelligence"
+          des="Transform daily operations with AI-powered workflows, integrations, and actionable analytics."
         />
         <AutomationBentoGridSection />
       </div>
       {/* AutomationBentoGridSection Feature End */}
+      {/* business automation content start*/}
+
+      <div className="pt-20 max-w-7xl mx-auto">
+        <>
+        <DynamicSection
+          textContent={{
+            heading: automationTextContent[0].heading,
+            description: automationTextContent[0].description,
+          }}
+        />
+         <DynamicSection imageSections={automationImageContent[0].sections} />
+         </>
+      </div>
+{/* business automation content end */}
+      {/* <div className="pt-20 max-w-7xl mx-auto">
+        <PrimaryHeading
+          heading="Vipprow Business Automation (AI)"
+          des="By reducing manual work and automating repetitive tasks, we enable businesses to focus more on strategy, growth, and customer experience.."
+        />
+        <BusinessDes />
+      </div> */}
 
       {/* Testimonial Start */}
       <div className="pt-20 max-w-7xl mx-auto">
         <PrimaryHeading
-          heading="Empower Your Workflow with AI"
-          des="Ask your AI Agent for real-time collaboration, seamless integrations, and actionable insghts to streamline your operations."
+          heading="Client Experiences That Matter"
+          des="Authentic stories from brands that achieved measurable growth through Vipprow’s strategic approach."
         />
         <ClientTestimonialMarquee />
       </div>

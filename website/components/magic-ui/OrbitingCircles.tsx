@@ -6,7 +6,7 @@ export function OrbitingCirclesDemo({ className }: { className?: string }) {
     <div
       className={cn(
         "pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden scale-100",
-        className
+        className,
       )}
     >
       {/* 🔵 CENTER ICON */}
@@ -24,25 +24,30 @@ export function OrbitingCirclesDemo({ className }: { className?: string }) {
       {/* 🟢 OUTER ORBIT (LARGEST) */}
       <OrbitingCircles iconSize={42} radius={180} speed={1}>
         <Icons.whatsapp />
-        <Icons.notion />
+        <Icons.pinterest />
         <Icons.googleDrive />
         <Icons.gitHub />
-        <Icons.whatsapp />
+        
+        
       </OrbitingCircles>
 
       {/* 🟡 MIDDLE ORBIT */}
       <OrbitingCircles iconSize={34} radius={120} reverse speed={1}>
-        <Icons.openai />
-        <Icons.notion />
-        <Icons.googleDrive />
-        <Icons.gitHub />
+       
+        
+        <Icons.linkedin />
+       
+         <Icons.instagramApp />
+        
+        <Icons.youtube />
       </OrbitingCircles>
 
       {/* 🔵 INNER ORBIT (SMALLEST) */}
       <OrbitingCircles iconSize={26} radius={70} speed={1}>
-        <Icons.openai />
-        <Icons.whatsapp />
-        <Icons.notion />
+         <Icons.xTwitter />
+        
+        
+         <Icons.facebookNew />
       </OrbitingCircles>
     </div>
   );
@@ -175,4 +180,141 @@ const Icons = {
       />
     </svg>
   ),
+  linkedin: () => (
+    <svg width="100" height="100" viewBox="0 0 448 512" fill="currentColor">
+      <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 01107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+    </svg>
+  ),
+
+instagramApp: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <radialGradient id="igAppGradient" cx="30%" cy="107%" r="150%">
+        <stop offset="0%" stopColor="#fdf497" />
+        <stop offset="5%" stopColor="#fdf497" />
+        <stop offset="45%" stopColor="#fd5949" />
+        <stop offset="60%" stopColor="#d6249f" />
+        <stop offset="90%" stopColor="#285AEB" />
+      </radialGradient>
+    </defs>
+
+    {/* Background */}
+    <rect
+      x="0"
+      y="0"
+      width="24"
+      height="24"
+      rx="6"
+      fill="url(#igAppGradient)"
+    />
+
+    {/* Outer Camera Border */}
+    <rect
+      x="5"
+      y="5"
+      width="14"
+      height="14"
+      rx="4"
+      fill="none"
+      stroke="white"
+      strokeWidth="2"
+    />
+
+    {/* Center Filled Circle */}
+    <circle
+      cx="12"
+      cy="12"
+      r="4"
+      fill="white"
+    />
+
+    {/* Small Top Right Dot */}
+    <circle
+      cx="17"
+      cy="7"
+      r="1.5"
+      fill="white"
+    />
+  </svg>
+),
+
+
+
+pinterest: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 496 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Red Circle Background */}
+    <circle cx="248" cy="256" r="248" fill="#E60023" />
+
+    {/* White Pinterest P */}
+    <path
+      fill="#FFFFFF"
+      d="M248 96c-88.4 0-160 71.6-160 160 0 64.7 37.8 120.5 92.4 146.6-1.3-12.4-2.4-31.4.5-44.9 2.6-11.6 16.9-73.8 16.9-73.8s-4.3-8.6-4.3-21.3c0-20 11.6-34.9 26-34.9 12.3 0 18.2 9.2 18.2 20.3 0 12.4-7.9 30.9-12 48-3.4 14.4 7.2 26.2 21.4 26.2 25.7 0 43-33 43-72.1 0-29.7-20-51.9-56.5-51.9-41.3 0-67.1 30.8-67.1 65.1 0 11.9 3.6 20.3 9.3 26.7 2.6 3 2.9 4.2 2 7.6-.7 2.5-2.3 8.6-3 11-.9 3.4-4 4.6-7 3.3-19.9-8.1-29.1-29.9-29.1-54.6 0-40.6 33.3-88.7 102-88.7 55.1 0 91.3 39.9 91.3 82.8 0 56.4-31.4 98.5-77.6 98.5-15.6 0-30.2-8.5-35.3-18.1l-9.6 36.6c-3.5 13.3-10.3 26.7-15.9 35.8 14.1 4.3 28.9 6.6 44.2 6.6 88.4 0 160-71.6 160-160S336.4 96 248 96z"
+    />
+  </svg>
+),
+
+
+
+  youtube: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 576 512"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#FF0000"
+      d="M549.655 124.083c-6.281-23.65-24.787-42.157-48.438-48.438C458.778 64 288 64 288 64S117.222 64 74.783 75.645c-23.65 6.281-42.157 24.787-48.438 48.438C16 166.522 16 256 16 256s0 89.478 10.345 131.917c6.281 23.65 24.787 42.157 48.438 48.438C117.222 448 288 448 288 448s170.778 0 213.217-11.645c23.65-6.281 42.157-24.787 48.438-48.438C560 345.478 560 256 560 256s0-89.478-10.345-131.917z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M232 336l142-80-142-80v160z"
+    />
+  </svg>
+),
+facebookNew: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Blue Circle */}
+    <circle cx="12" cy="12" r="12" fill="#1877F2" />
+
+    {/* White "f" */}
+    <path
+      fill="#FFFFFF"
+      d="M15.117 8.667h-1.9c-.298 0-.617.39-.617.915v1.37h2.517l-.38 2.32h-2.137V20h-2.626v-6.728H8.5v-2.32h1.474V9.795c0-1.46 1.005-2.795 2.657-2.795h2.486v1.667z"
+    />
+  </svg>
+),
+
+
+xTwitter: () => (
+  <svg
+    width="100"
+    height="100"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    className="fill-black dark:fill-white"
+  >
+    <path d="M18.244 2H21l-6.43 7.36L22 22h-6.8l-5.324-7.03L3.88 22H1l6.873-7.863L2 2h6.97l4.81 6.352L18.244 2zm-1.19 18h1.885L7.08 4H5.078l11.976 16z" />
+  </svg>
+),
+
+
+
+
+
 };

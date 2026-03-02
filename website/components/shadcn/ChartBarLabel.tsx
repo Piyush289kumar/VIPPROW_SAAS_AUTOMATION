@@ -29,13 +29,14 @@ import { cn } from "@/lib/utils";
 export const description = "A bar chart with a custom label";
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", desktop: 112, desktopLabel: "3CR" },
+  { month: "February", desktop: 305, desktopLabel: "10CR" },
+  { month: "March", desktop: 237, desktopLabel: "7CR" },
+  { month: "April", desktop: 73, desktopLabel: "2CR" },
+  { month: "May", desktop: 209, desktopLabel: "6CR" },
+  { month: "June", desktop: 214, desktopLabel: "6.5CR" },
 ];
+
 
 const chartConfig = {
   desktop: {
@@ -56,7 +57,7 @@ export function ChartBarLabelSection({ className }: { className?: string }) {
     <div
       className={cn(
         "relative flex h-[500px] w-full flex-col overflow-hidden p-2",
-        className
+        className,
       )}
     >
       <Card>
@@ -99,7 +100,7 @@ export function ChartBarLabelSection({ className }: { className?: string }) {
                   fontSize={12}
                 />
                 <LabelList
-                  dataKey="desktop"
+                  dataKey="desktopLabel"
                   position="right"
                   offset={8}
                   className="fill-foreground"
