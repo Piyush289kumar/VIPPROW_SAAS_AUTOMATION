@@ -214,12 +214,16 @@ export default function TestimonialForm({
                   )}
                 </div>
 
+
+
+
+
                 {/* Designation */}
                 <div>
-                  <Label className="mb-2">Designation</Label>
+                  <Label className="mb-2">Brand Preview</Label>
                   <Input
                     value={values.designation}
-                    placeholder="Enter Designation"
+                    placeholder="Enter Brand Preview"
                     onChange={(e) =>
                       handleChange("designation", e.target.value)
                     }
@@ -347,6 +351,9 @@ export default function TestimonialForm({
             </Card>
           </div>
         </div>
+
+
+
 
         {/* FOOTER BUTTONS */}
         <div className="flex gap-3 pt-6">
